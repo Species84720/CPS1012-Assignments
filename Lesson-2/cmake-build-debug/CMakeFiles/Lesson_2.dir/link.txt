@@ -1,0 +1,1 @@
+/usr/bin/cc -g  -Wl,--enable-auto-import CMakeFiles/Lesson_2.dir/main.c.o CMakeFiles/Lesson_2.dir/Print_String.c.o  -o Lesson_2.exe -Wl,--out-implib,libLesson_2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

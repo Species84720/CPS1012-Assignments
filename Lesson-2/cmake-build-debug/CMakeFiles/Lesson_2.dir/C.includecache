@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/Lesson-2/headers.h
+stdbool.h
+-
+stdio.h
+-
+unistd.h
+-
+stdlib.h
+-
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/Lesson-2/main.c
+headers.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/Lesson-2/headers.h
+

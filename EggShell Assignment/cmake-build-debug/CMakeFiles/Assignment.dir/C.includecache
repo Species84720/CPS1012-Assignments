@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Controllers.c
+header.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Printing.c
+header.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+stdio.h
+-
+linenoise-master/linenoise.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
+memory.h
+-
+stdbool.h
+-
+stdlib.h
+-
+unistd.h
+-
+ctype.h
+-
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/main.c
+header.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/tinyShell.c
+header.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+

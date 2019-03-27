@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+stdio.h
+-
+linenoise-master/linenoise.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
+memory.h
+-
+stdbool.h
+-
+stdlib.h
+-
+unistd.h
+-
+ctype.h
+-
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/tinyShell.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
