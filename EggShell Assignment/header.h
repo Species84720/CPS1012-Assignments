@@ -27,6 +27,7 @@ store systemArgs[500];
 
 int checkVariable(char args[], int systemVariables);
 void setVariable(char **args, int *systemVariables);
+char *upperCase(char *args);
 void tiny_shell();
 
 bool Commands (char **args, int *systemVariables);

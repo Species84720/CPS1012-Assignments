@@ -41,11 +41,10 @@ char *upperCase(char *args)
     int k = 1;
     while (args[k] != '\0')
     {
-        printf("%c %d\n", args[k], k);
         args[k] = toupper(args[k]);
         k++;
     }
-    printf("hello\n");
+    return args;
 }
 
 void setVariable(char **args, int *systemVariables)

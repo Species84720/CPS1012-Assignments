@@ -53,6 +53,7 @@ void printing(char **args, int systemVariables)
         else if(args[k][0] == '$')
         {
             int check;
+            args[k] = upperCase(args[k]);
             check = checkVariable(args[k], systemVariables);
             if (check != -1)
             {
