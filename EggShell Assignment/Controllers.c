@@ -85,6 +85,92 @@ void directoryChanger(char **args)
     }
 }
 
+//to remove a certain character from a string - to convert windows file to ubuntu really
+void removeChar(FILE *file, char character, char *location){
+    int c = 0;
+    int n = 0;
+
+    //go to the end of file
+    fseek(file, 0, SEEK_END);
+    //take the size of file
+    long f_size = ftell(file);
+    //back to the start
+    fseek(file, 0, SEEK_SET);
+    char *code = malloc(f_size);
+
+    while ((c = fgetc(file)) != EOF)
+    {
+        if ((char)c != character)
+        {
+            code[n++] = (char) c;
+        }
+    }
+    code[n] = '\0';
+
+    //close the read file
+    fclose(file);
+    //open the write file
+    file = fopen(location, "w");
+    fprintf(file, "%s", code);
+    fclose(file);
+}
+
+int sourceExecution(char **args, int *systemVariable)
+{
+    //changing the stdin as the file instead of the terminal
+    int fd = dup(fileno(stdin));
+    FILE *openfd;
+
+    //looping through the arguments to make sure there is no '\' to show a file with a space
+    char *location = malloc(256);
+    strcpy(location, args[1]);
+    if (strchr(args[1], '\\') != NULL) {
+        //remove the '\'
+        location = substr(location, 0, 1);
+        size_t length = strlen(location);
+        location[length] = ' ';
+        location[length + 1] = '\0';
+        int k = 2;
+        int n = 0;
+        while (args[k][n] != '\0') {
+            //concatenating the character to the string
+            length = strlen(location);
+            location[length] = args[k][n];
+            location[length + 1] = '\0';
+            n++;
+
+            if (args[k][n] == '\\') {
+                strcat(location, " ");
+                k++;
+                //resetting the n pointer since a new token is being used
+                n = 0;
+            }
+        }
+    }
+
+    //open file
+    if ((openfd = fopen(location, "r")) != NULL)
+    {
+        //cleaning the files from any possible '\r'
+        removeChar(openfd, '\r', location);
+
+        //now reading and using the data
+        dup2(open(location, O_RDONLY), fileno(stdin));
+        prompting(systemVariable);
+    }
+    else
+    {
+        printf("The file %s does not exit!\n", location);
+    }
+
+    //closing the file and giving back control to the terminal
+    fflush(stdin);
+    dup2(fd, fileno(stdin));
+    close(fd);
+
+    return systemVariable[0];
+}
+
 bool Commands (char **args, int *systemVariables)
 {
     //if no arguments are passed then do nothing
@@ -113,7 +199,7 @@ bool Commands (char **args, int *systemVariables)
     }
     else if(strcmp(args[0], "source")==0)
     {
-
+        systemVariables[0] = sourceExecution(args, systemVariables);
     }
 
     return false;

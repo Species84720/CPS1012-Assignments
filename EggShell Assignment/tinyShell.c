@@ -84,21 +84,18 @@ void setVariable(char **args, int *systemVariables)
     }
 
     //if not found create a new variable
+    strcpy(systemArgs[systemVariables[0]].key, substr(args[0], 1, 0));
+    strcpy(systemArgs[systemVariables[0]].value, equals);
+    //since the values are back by a value of 1 then the addition can be done after the copying
     systemVariables[0] = systemVariables[0] + 1;
-
 }
 
-void tiny_shell()
+void prompting(int *systemVariables)
 {
     //to see if exit was passed to the shell
     bool exit = false;
 
-    //setting the system variables and the amount of variables
-    int *systemVariables = malloc(sizeof(int));
-    systemVariables[0] = setSystemVariables();
-
-    char *line, *token = NULL, *args[MAX_ARGS];
-
+    char *line = NULL, *token = NULL, *args[MAX_ARGS];
     while (exit == false && (line = linenoise("prompt> ")) != NULL) {
         tokening(token, line, args);
         exit = Commands(args, systemVariables);
@@ -106,4 +103,13 @@ void tiny_shell()
         // Free allocated memory
         linenoiseFree(line);
     }
+}
+
+void tiny_shell()
+{
+    //setting the system variables and the amount of variables
+    int *systemVariables = malloc(sizeof(int));
+    systemVariables[0] = setSystemVariables();
+
+    prompting(systemVariables);
 }

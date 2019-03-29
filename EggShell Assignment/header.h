@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <ctype.h>
+#include <sys/fcntl.h>
 
 #define MAX_ARGS 255
 
@@ -28,6 +29,7 @@ store systemArgs[500];
 int checkVariable(char args[], int systemVariables);
 void setVariable(char **args, int *systemVariables);
 char *upperCase(char *args);
+void prompting(int *systemVariables);
 void tiny_shell();
 
 bool Commands (char **args, int *systemVariables);
