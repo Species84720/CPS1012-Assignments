@@ -86,6 +86,7 @@ void directoryChanger(char **args)
 }
 
 //to remove a certain character from a string - to convert windows file to ubuntu really
+//and to add an enter at the end of file if needed
 void removeChar(FILE *file, char character, char *location){
     int c = 0;
     int n = 0;
@@ -104,6 +105,15 @@ void removeChar(FILE *file, char character, char *location){
         {
             code[n++] = (char) c;
         }
+        if ((char)c == '\n')
+        {
+            fileLines++;
+        }
+    }
+    if (code[n - 1] != '\n')
+    {
+        code[n++] = '\n';
+        fileLines++;
     }
     code[n] = '\0';
 
@@ -115,10 +125,9 @@ void removeChar(FILE *file, char character, char *location){
     fclose(file);
 }
 
-int sourceExecution(char **args, int *systemVariable)
+void sourceExecution(char **args, int *systemVariable)
 {
-    //changing the stdin as the file instead of the terminal
-    int fd = dup(fileno(stdin));
+    //int fd = dup(fileno(stdin));
     FILE *openfd;
 
     //looping through the arguments to make sure there is no '\' to show a file with a space
@@ -154,21 +163,15 @@ int sourceExecution(char **args, int *systemVariable)
         //cleaning the files from any possible '\r'
         removeChar(openfd, '\r', location);
 
-        //now reading and using the data
+        //now reading and using the data - changing the stdin as the file instead of the terminal
         dup2(open(location, O_RDONLY), fileno(stdin));
-        prompting(systemVariable);
+        
+        fclose(openfd);
     }
     else
     {
         printf("The file %s does not exit!\n", location);
     }
-
-    //closing the file and giving back control to the terminal
-    fflush(stdin);
-    dup2(fd, fileno(stdin));
-    close(fd);
-
-    return systemVariable[0];
 }
 
 bool Commands (char **args, int *systemVariables)
@@ -199,7 +202,7 @@ bool Commands (char **args, int *systemVariables)
     }
     else if(strcmp(args[0], "source")==0)
     {
-        systemVariables[0] = sourceExecution(args, systemVariables);
+        sourceExecution(args, systemVariables);
     }
 
     return false;
@@ -229,6 +232,7 @@ int setSystemVariables()
     strcpy(systemArgs[6].value, ttyname(STDIN_FILENO));
 
     int exitcode = 0;
+    fileLines = 0;
 
     return 7;
 }

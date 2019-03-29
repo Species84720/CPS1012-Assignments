@@ -25,6 +25,7 @@ typedef struct linked_list
 }store;
 
 store systemArgs[500];
+int fileLines;
 
 int checkVariable(char args[], int systemVariables);
 void setVariable(char **args, int *systemVariables);

@@ -92,13 +92,29 @@ void setVariable(char **args, int *systemVariables)
 
 void prompting(int *systemVariables)
 {
+    //backup of stdin
+    int backup = dup(fileno(stdin));
+
     //to see if exit was passed to the shell
     bool exit = false;
 
     char *line = NULL, *token = NULL, *args[MAX_ARGS];
     while (exit == false && (line = linenoise("prompt> ")) != NULL) {
+        //checking if we are currently getting data from a file
+        if (fileLines != 0)
+        {
+            fileLines--;
+            if (fileLines == 0)
+            {
+                //closing the file and giving back control to the terminal
+                fflush(stdin);
+                dup2(backup, fileno(stdin));
+            }
+        }
+
         tokening(token, line, args);
         exit = Commands(args, systemVariables);
+
 
         // Free allocated memory
         linenoiseFree(line);
