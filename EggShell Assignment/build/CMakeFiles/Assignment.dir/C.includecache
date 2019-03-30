@@ -10,6 +10,10 @@
 header.h
 /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
 
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Printing.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
 /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
 stdio.h
 -
@@ -27,6 +31,18 @@ ctype.h
 -
 sys/fcntl.h
 -
+signal.h
+-
+sys/wait.h
+-
 
 /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/main.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/tinyShell.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
 

@@ -4,8 +4,9 @@
 
 #include "header.h"
 
-void tokening(char *token, char *line, char *args[MAX_ARGS])
+void tokening(char *line, char *args[MAX_ARGS])
 {
+    char *token = NULL;
     int tokenIndex;
     token = strtok(line, " ");
 
@@ -90,31 +91,46 @@ void setVariable(char **args, int *systemVariables)
     systemVariables[0] = systemVariables[0] + 1;
 }
 
+void signalHandler(int signal)
+{
+    //getting the pid of the current process
+    //pid_t process = currentPID;
+    //int success = kill(process, SIGINT);
+}
+
 void prompting(int *systemVariables)
 {
     //backup of stdin
-    int backup = dup(fileno(stdin));
+    int backupin = dup(fileno(stdin));
+    int backupout = dup(fileno(stdout));
 
     //to see if exit was passed to the shell
     bool exit = false;
 
-    char *line = NULL, *token = NULL, *args[MAX_ARGS];
+    char *line = NULL, *args[MAX_ARGS];
     while (exit == false && (line = linenoise("prompt> ")) != NULL) {
-        //checking if we are currently getting data from a file
-        if (fileLines != 0)
-        {
-            fileLines--;
-            if (fileLines == 0)
-            {
-                //closing the file and giving back control to the terminal
-                fflush(stdin);
-                dup2(backup, fileno(stdin));
+        //setting up the terminate signal
+        //signal(SIGINT, signalHandler);
+
+        if (backupin != fileno(stdin)) {
+            //checking if we are currently getting data from a file
+            if (fileLines != 0) {
+                fileLines--;
+                if (fileLines == 0) {
+                    //closing the file and giving back control to the terminal
+                    fflush(stdin);
+                    dup2(backupin, fileno(stdin));
+                }
             }
         }
 
-        tokening(token, line, args);
+        tokening(line, args);
         exit = Commands(args, systemVariables);
 
+        //checking if '>' was introduced into the command
+        if (backupout != fileno(stdout)) {
+            dup2(backupout, fileno(stdout));
+        }
 
         // Free allocated memory
         linenoiseFree(line);

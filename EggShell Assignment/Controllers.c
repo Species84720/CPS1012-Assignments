@@ -85,6 +85,37 @@ void directoryChanger(char **args)
     }
 }
 
+char *processSlash(char **args, char *location, int start)
+{
+    //looping through the arguments to make sure there is no '\' to show a file with a space
+    strcpy(location, args[start]);
+    if (strchr(args[start], '\\') != NULL) {
+        //remove the '\'
+        location = substr(location, 0, 1);
+        size_t length = strlen(location);
+        location[length] = ' ';
+        location[length + 1] = '\0';
+        int k = start + 1;
+        int n = 0;
+        while (args[k][n] != '\0') {
+            //concatenating the character to the string
+            length = strlen(location);
+            location[length] = args[k][n];
+            location[length + 1] = '\0';
+            n++;
+
+            if (args[k][n] == '\\') {
+                strcat(location, " ");
+                k++;
+                //resetting the n pointer since a new token is being used
+                n = 0;
+            }
+        }
+    }
+
+    return location;
+}
+
 //to remove a certain character from a string - to convert windows file to ubuntu really
 //and to add an enter at the end of file if needed
 void removeChar(FILE *file, char character, char *location){
@@ -125,37 +156,14 @@ void removeChar(FILE *file, char character, char *location){
     fclose(file);
 }
 
-void sourceExecution(char **args, int *systemVariable)
+void sourceExecution(char **args)
 {
     //int fd = dup(fileno(stdin));
     FILE *openfd;
 
     //looping through the arguments to make sure there is no '\' to show a file with a space
     char *location = malloc(256);
-    strcpy(location, args[1]);
-    if (strchr(args[1], '\\') != NULL) {
-        //remove the '\'
-        location = substr(location, 0, 1);
-        size_t length = strlen(location);
-        location[length] = ' ';
-        location[length + 1] = '\0';
-        int k = 2;
-        int n = 0;
-        while (args[k][n] != '\0') {
-            //concatenating the character to the string
-            length = strlen(location);
-            location[length] = args[k][n];
-            location[length + 1] = '\0';
-            n++;
-
-            if (args[k][n] == '\\') {
-                strcat(location, " ");
-                k++;
-                //resetting the n pointer since a new token is being used
-                n = 0;
-            }
-        }
-    }
+    location = processSlash(args, location, 1);
 
     //open file
     if ((openfd = fopen(location, "r")) != NULL)
@@ -165,7 +173,7 @@ void sourceExecution(char **args, int *systemVariable)
 
         //now reading and using the data - changing the stdin as the file instead of the terminal
         dup2(open(location, O_RDONLY), fileno(stdin));
-        
+
         fclose(openfd);
     }
     else
@@ -174,11 +182,76 @@ void sourceExecution(char **args, int *systemVariable)
     }
 }
 
+void ChangeArgs(char **args, int k)
+{
+    //checking if file exists
+    FILE *file;
+    char *location = malloc(256);
+    location = processSlash(args, location, k + 1);
+    if ((file = fopen(location, "r")) != NULL)
+    {
+        //considering that longest command will be less than 255 characters
+        char *code = malloc(MAX_ARGS);
+        //placing the current arguments to the new string
+        for (int i = 0; i < k; i++)
+        {
+            strcat(code, args[i]);
+            strcat(code, " ");
+        }
+        //placing the file onto the string
+        char *temp = malloc(MAX_ARGS);
+        //stopping at the sign of a new line or EOF
+        fgets(temp, MAX_ARGS, file);
+        strcat(code, temp);
+        free(temp);
+
+        //tokenize the new string to take place of the old arguments
+        tokening(code, args);
+    }
+    else
+    {
+        printf("The file %s does not exit!\n", location);
+        args[0] = 0;
+    }
+}
+
 bool Commands (char **args, int *systemVariables)
 {
     //if no arguments are passed then do nothing
-    if (args[0] == 0) {}
-    else if (args[0][0] == '$')
+    if (args[0] == 0)
+    {
+        return false;
+    }
+
+    //loop to find any ">" or ">>" or "<"
+    int k = 0;
+    do
+    {
+        if (strcmp(args[k], ">") == 0)
+        {
+            dup2(open(args[k + 1], O_RDWR | O_CREAT), fileno(stdout));
+            break;
+        }
+        else if (strcmp(args[k], ">>") == 0)
+        {
+            dup2(open(args[k + 1], O_RDWR | O_CREAT | O_APPEND), fileno(stdout));
+            break;
+        }
+        else if (strcmp(args[k], "<") == 0)
+        {
+            //changing the arguments to the new one's with the file commands included
+            ChangeArgs(args, k);
+            break;
+        }
+        k++;
+    } while (args[k] != NULL);
+
+    //check again to see that the file input has worked
+    if (args[0] == 0)
+    {
+        return false;
+    }
+    if (args[0][0] == '$')
     {
         setVariable(args, systemVariables);
     }
@@ -202,7 +275,14 @@ bool Commands (char **args, int *systemVariables)
     }
     else if(strcmp(args[0], "source")==0)
     {
-        sourceExecution(args, systemVariables);
+        sourceExecution(args);
+    }
+    else if(strcmp(args[0], "loop") == 0)
+    {
+        while (1)
+        {
+
+        }
     }
 
     return false;

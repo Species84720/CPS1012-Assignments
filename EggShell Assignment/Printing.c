@@ -50,6 +50,11 @@ void printing(char **args, int systemVariables)
         {
             printf("%s ", substr(args[k], 1, 0));
         }
+        else if(args[k][0] == '>' || args[k][0] == '<')
+        {
+            //to stop when a '>' is found
+            break;
+        }
         else if(args[k][0] == '$')
         {
             int check;
@@ -57,11 +62,11 @@ void printing(char **args, int systemVariables)
             check = checkVariable(args[k], systemVariables);
             if (check != -1)
             {
-                printf("%s", systemArgs[check].value);
+                printf("%s ", systemArgs[check].value);
             }
             else
             {
-                printf("Variable %s was not found as a system variable!", substr(args[k], 1, 0));
+                printf("\nVariable %s was not found as a system variable!", substr(args[k], 1, 0));
             }
         }
         else
