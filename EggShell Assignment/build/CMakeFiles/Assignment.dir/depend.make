@@ -9,6 +9,10 @@ CMakeFiles/Assignment.dir/Printing.c.o: ../Printing.c
 CMakeFiles/Assignment.dir/Printing.c.o: ../header.h
 CMakeFiles/Assignment.dir/Printing.c.o: ../linenoise-master/linenoise.h
 
+CMakeFiles/Assignment.dir/external.c.o: ../external.c
+CMakeFiles/Assignment.dir/external.c.o: ../header.h
+CMakeFiles/Assignment.dir/external.c.o: ../linenoise-master/linenoise.h
+
 CMakeFiles/Assignment.dir/linenoise-master/linenoise.c.o: ../linenoise-master/linenoise.c
 CMakeFiles/Assignment.dir/linenoise-master/linenoise.c.o: ../linenoise-master/linenoise.h
 

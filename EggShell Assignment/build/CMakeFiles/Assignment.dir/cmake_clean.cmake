@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Assignment.dir/linenoise-master/linenoise.c.o"
   "CMakeFiles/Assignment.dir/Controllers.c.o"
   "CMakeFiles/Assignment.dir/Printing.c.o"
+  "CMakeFiles/Assignment.dir/external.c.o"
   "Assignment.pdb"
   "Assignment"
 )

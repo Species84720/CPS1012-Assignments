@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Controllers.c" "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles/Assignment.dir/Controllers.c.o"
   "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Printing.c" "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles/Assignment.dir/Printing.c.o"
+  "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/external.c" "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles/Assignment.dir/external.c.o"
   "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.c" "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles/Assignment.dir/linenoise-master/linenoise.c.o"
   "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/main.c" "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles/Assignment.dir/main.c.o"
   "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/tinyShell.c" "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles/Assignment.dir/tinyShell.c.o"

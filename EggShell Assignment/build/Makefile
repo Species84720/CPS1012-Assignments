@@ -177,6 +177,33 @@ Printing.c.s:
 	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/Printing.c.s
 .PHONY : Printing.c.s
 
+external.o: external.c.o
+
+.PHONY : external.o
+
+# target to build an object file
+external.c.o:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/external.c.o
+.PHONY : external.c.o
+
+external.i: external.c.i
+
+.PHONY : external.i
+
+# target to preprocess a source file
+external.c.i:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/external.c.i
+.PHONY : external.c.i
+
+external.s: external.c.s
+
+.PHONY : external.s
+
+# target to generate assembly for a file
+external.c.s:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/external.c.s
+.PHONY : external.c.s
+
 linenoise-master/linenoise.o: linenoise-master/linenoise.c.o
 
 .PHONY : linenoise-master/linenoise.o
@@ -273,6 +300,9 @@ help:
 	@echo "... Printing.o"
 	@echo "... Printing.i"
 	@echo "... Printing.s"
+	@echo "... external.o"
+	@echo "... external.i"
+	@echo "... external.s"
 	@echo "... linenoise-master/linenoise.o"
 	@echo "... linenoise-master/linenoise.i"
 	@echo "... linenoise-master/linenoise.s"

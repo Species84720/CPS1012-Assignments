@@ -42,4 +42,6 @@ char *substr(char *string, int left, int right);
 void printing(char **args, int systemVariables);
 void printSystemVariables(int SystemVariables);
 
+void externalFunctions(char **args);
+
 #endif //ASSIGNMENT_HEADER_H

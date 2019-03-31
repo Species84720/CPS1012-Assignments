@@ -277,12 +277,9 @@ bool Commands (char **args, int *systemVariables)
     {
         sourceExecution(args);
     }
-    else if(strcmp(args[0], "loop") == 0)
+    else
     {
-        while (1)
-        {
-
-        }
+        externalFunctions(args);
     }
 
     return false;
