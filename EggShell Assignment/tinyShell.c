@@ -24,7 +24,7 @@ int checkVariable(char args[], int systemVariables)
     int l = 0;
     for (l = 0; l < systemVariables; l++)
     {
-        if (strcmp(substr(args, 1, 0), systemArgs[l].key) == 0)
+        if (strcmp(args, systemArgs[l].key) == 0)
         {
             return l;
         }
@@ -39,7 +39,11 @@ int checkVariable(char args[], int systemVariables)
 
 char *upperCase(char *args)
 {
-    int k = 1;
+    int k = 0;
+    if (args[k] == '$')
+    {
+        k++;
+    }
     while (args[k] != '\0')
     {
         args[k] = toupper(args[k]);
@@ -54,8 +58,7 @@ void setVariable(char **args, int *systemVariables)
 
     //finding the "=" in your string
     char *equals;
-    //skipping the '$' and the first letter of the variable
-    // - if the equal is within these 2 then the variable is nothing and that cannot happen
+    //if the equal is within these 2 then the variable is nothing and that cannot happen
     equals = strstr(args[0], "=");
     //if no equals is found then an error is given
     if (equals == NULL)
@@ -63,9 +66,9 @@ void setVariable(char **args, int *systemVariables)
         printf("No \"=\" condition was found in the condition\n");
         return;
     }
-    else if (args[0][1] == '=')
+    else if (args[0][0] == '=')
     {
-        printf("No variable name was given to value %s\n", substr(equals, 1, 0));
+        printf("No variable name was given to value %s\n", equals);
         return;
     }
 
@@ -80,13 +83,58 @@ void setVariable(char **args, int *systemVariables)
     if (check != -1)
     {
         //allocating the split value to the current variable
-        strcpy(systemArgs[check].value, equals);
+        if(equals[0] != '$')
+        {
+            strcpy(systemArgs[check].value, equals);
+        }
+        else
+        {
+            //since it is a variable
+            upperCase(equals);
+
+            int checkVar;
+            checkVar = checkVariable(substr(equals, 1, 0), systemVariables[0]);
+            if (checkVar != -1)
+            {
+                strcpy(systemArgs[check].value, systemArgs[checkVar].value);
+            }
+            else
+            {
+                printf("\nVariable %s was not found as a system variable!\n", substr(args[0], 1, 0));
+            }
+        }
+
+        if (check == 5)
+        {
+            strcat(systemArgs[check].value, "> ");
+        }
         return;
     }
 
     //if not found create a new variable
-    strcpy(systemArgs[systemVariables[0]].key, substr(args[0], 1, 0));
-    strcpy(systemArgs[systemVariables[0]].value, equals);
+    if(equals[0] != '$')
+    {
+        strcpy(systemArgs[systemVariables[0]].key, args[0]);
+        strcpy(systemArgs[systemVariables[0]].value, equals);
+    }
+    else
+    {
+        //since it is a variable
+        upperCase(equals);
+
+        int checkVar;
+        checkVar = checkVariable(substr(equals, 1, 0), systemVariables[0]);
+        if (checkVar != -1)
+        {
+            strcpy(systemArgs[systemVariables[0]].key, args[0]);
+            strcpy(systemArgs[systemVariables[0]].value, systemArgs[checkVar].value);
+        }
+        else
+        {
+            printf("\nVariable %s was not found as a system variable!\n", substr(equals, 1, 0));
+        }
+    }
+
     //since the values are back by a value of 1 then the addition can be done after the copying
     systemVariables[0] = systemVariables[0] + 1;
 }
@@ -108,7 +156,7 @@ void prompting(int *systemVariables, char **envp)
     bool exit = false;
 
     char *line = NULL, *args[MAX_ARGS];
-    while (exit == false && (line = linenoise("prompt> ")) != NULL) {
+    while (exit == false && (line = linenoise(systemArgs[5].value)) != NULL) {
         //setting up the terminate signal
         //signal(SIGINT, signalHandler);
 
