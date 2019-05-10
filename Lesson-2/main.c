@@ -1,5 +1,6 @@
 #define FORKING
 
+#include <wait.h>
 #include "headers.h"
 
 int main(int argc, char *argv[], char **envp) {
@@ -30,6 +31,27 @@ int main(int argc, char *argv[], char **envp) {
 
 #elif defined(FORKING)
     execl("/bin/", "top -d 2 -n 10", (char *)NULL);
+
+    pid_t pid = fork();
+
+    //child process
+    if (pid == 0)
+    {
+        int error = 0;
+        char *args[] = { "ps", "-f" };
+        error = execve(args[0], args, envp);
+        if (error == -1)
+            printf("Function was not executed correctly\n");
+        exit(0);
+    }
+        //parent process
+    else if (pid > 0)
+    {
+        //waiting for the child
+        wait(NULL);
+    }
+    else
+        printf("Error forking was not executed!!!\n");
 
 #endif
     return 0;

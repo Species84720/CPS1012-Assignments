@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/Lesson_2.dir/main.c.o CMakeFiles/Lesson_2.dir/Print_String.c.o  -o Lesson_2 

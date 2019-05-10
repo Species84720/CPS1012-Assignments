@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/Lesson-2/Print_String.c
+headers.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/Lesson-2/headers.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/Lesson-2/headers.h
+stdbool.h
+-
+stdio.h
+-
+unistd.h
+-
+stdlib.h
+-
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/Lesson-2/main.c
+wait.h
+-
+headers.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/Lesson-2/headers.h
+
