@@ -98,7 +98,7 @@ void signalHandler(int signal)
     //int success = kill(process, SIGINT);
 }
 
-void prompting(int *systemVariables)
+void prompting(int *systemVariables, char **envp)
 {
     //backup of stdin
     int backupin = dup(fileno(stdin));
@@ -125,7 +125,7 @@ void prompting(int *systemVariables)
         }
 
         tokening(line, args);
-        exit = Commands(args, systemVariables);
+        exit = Commands(args, systemVariables, envp);
 
         //checking if '>' was introduced into the command
         if (backupout != fileno(stdout)) {
@@ -137,11 +137,11 @@ void prompting(int *systemVariables)
     }
 }
 
-void tiny_shell()
+void tiny_shell(char **envp)
 {
     //setting the system variables and the amount of variables
     int *systemVariables = malloc(sizeof(int));
     systemVariables[0] = setSystemVariables();
 
-    prompting(systemVariables);
+    prompting(systemVariables, envp);
 }

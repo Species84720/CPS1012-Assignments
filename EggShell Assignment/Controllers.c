@@ -215,7 +215,7 @@ void ChangeArgs(char **args, int k)
     }
 }
 
-bool Commands (char **args, int *systemVariables)
+bool Commands (char **args, int *systemVariables, char **envp)
 {
     //if no arguments are passed then do nothing
     if (args[0] == 0)
@@ -251,7 +251,7 @@ bool Commands (char **args, int *systemVariables)
     {
         return false;
     }
-    if (args[0][0] == '$')
+    if (strchr(args[0], '='))
     {
         setVariable(args, systemVariables);
     }
@@ -279,7 +279,7 @@ bool Commands (char **args, int *systemVariables)
     }
     else
     {
-        externalFunctions(args);
+        externalFunctions(args, envp);
     }
 
     return false;
@@ -308,7 +308,6 @@ int setSystemVariables()
     strcpy(systemArgs[6].key, "TERMINAL");
     strcpy(systemArgs[6].value, ttyname(STDIN_FILENO));
 
-    int exitcode = 0;
     fileLines = 0;
 
     return 7;

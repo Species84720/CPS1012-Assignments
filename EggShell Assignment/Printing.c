@@ -59,7 +59,7 @@ void printing(char **args, int systemVariables)
         {
             int check;
             args[k] = upperCase(args[k]);
-            check = checkVariable(args[k], systemVariables);
+            check = checkVariable(substr(args[k], 1, 0), systemVariables);
             if (check != -1)
             {
                 printf("%s ", systemArgs[check].value);

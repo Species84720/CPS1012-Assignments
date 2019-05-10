@@ -5,6 +5,7 @@
 #ifndef ASSIGNMENT_HEADER_H
 #define ASSIGNMENT_HEADER_H
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include "linenoise-master/linenoise.h"
 #include <memory.h>
@@ -33,15 +34,15 @@ void tokening(char *line, char *args[MAX_ARGS]);
 int checkVariable(char args[], int systemVariables);
 void setVariable(char **args, int *systemVariables);
 char *upperCase(char *args);
-void tiny_shell();
+void tiny_shell(char **envp);
 
-bool Commands (char **args, int *systemVariables);
+bool Commands (char **args, int *systemVariables, char **envp);
 int setSystemVariables();
 
 char *substr(char *string, int left, int right);
 void printing(char **args, int systemVariables);
 void printSystemVariables(int SystemVariables);
 
-void externalFunctions(char **args);
+void externalFunctions(char **args, char **envp);
 
 #endif //ASSIGNMENT_HEADER_H
