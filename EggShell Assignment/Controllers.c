@@ -303,7 +303,7 @@ int setSystemVariables()
     strcpy(systemArgs[4].value,getenv("SHELL"));
 
     strcpy(systemArgs[5].key,"PROMPT");
-    strcpy(systemArgs[5].value,"eggshell-1.0> ");
+    strcpy(systemArgs[5].value,"eggshell-1.0");
 
     strcpy(systemArgs[6].key, "TERMINAL");
     strcpy(systemArgs[6].value, ttyname(STDIN_FILENO));

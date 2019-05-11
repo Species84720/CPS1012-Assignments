@@ -108,10 +108,12 @@ void setVariable(char **args, int *systemVariables)
             }
         }
 
+        /*
         if (check == 5)
         {
             strcat(systemArgs[check].value, "> ");
         }
+        */
         return;
     }
 
@@ -268,8 +270,14 @@ void prompting(int *systemVariables, char **envp)
     //to see if exit was passed to the shell
     bool exit = false;
 
+    char prompt[MAX_ARGS];
+    strcpy(prompt, systemArgs[5].value);
+    strcat(prompt, ":");
+    strcat(prompt, systemArgs[2].value);
+    strcat(prompt, "# ");
+
     char *line = NULL;//, *args[MAX_ARGS];
-    while (exit == false && (line = linenoise(systemArgs[5].value)) != NULL) {
+    while (exit == false && (line = linenoise(prompt)) != NULL) {
         //setting up the terminate signal
         //signal(SIGINT, signalHandler);
 
@@ -286,6 +294,12 @@ void prompting(int *systemVariables, char **envp)
 
         // Free allocated memory
         linenoiseFree(line);
+
+        //to make sure the directory is still the same
+        strcpy(prompt, systemArgs[5].value);
+        strcat(prompt, ":");
+        strcat(prompt, systemArgs[2].value);
+        strcat(prompt, "# ");
     }
 }
 
