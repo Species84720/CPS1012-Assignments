@@ -33,11 +33,13 @@ typedef struct linked_list
 store systemArgs[500];
 int fileLines;
 bool fileEditing;
+pid_t killPID;
 
 int tokening(char *line, char *args[MAX_ARGS], char With);
 int checkVariable(char args[], int systemVariables);
 void setVariable(char **args, int *systemVariables);
 char *upperCase(char *args);
+void signalHandler(int signal);
 bool prompting(int *systemVariables, char **envp);
 void tiny_shell(char **envp);
 

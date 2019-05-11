@@ -144,11 +144,16 @@ void setVariable(char **args, int *systemVariables)
     systemVariables[0] = systemVariables[0] + 1;
 }
 
-void signalHandler(int signal)
+void signalHandler(int sig)
 {
+    //resetting signal
+    signal(SIGINT, signalHandler);
+
     //getting the pid of the current process
-    //pid_t process = currentPID;
-    //int success = kill(process, SIGINT);
+    if (killPID != 0) {
+        kill(killPID, SIGINT);
+        fflush(stdout);
+    }
 }
 
 void fileHandling(int backupin)
@@ -211,6 +216,7 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
         //carrying out the fork
         pid_t ID;
         ID = fork();
+        killPID = ID;
 
         //child process
         if (ID == 0)
@@ -251,6 +257,9 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
             //waiting for the child
             waitpid(ID, &status, 0);
             //wait(NULL);
+
+            //setting up the terminate signal
+            killPID = 0;
 
             if (WIFEXITED(status))
             {
@@ -309,6 +318,10 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
 
 bool prompting(int *systemVariables, char **envp)
 {
+    //setting up the terminate signal
+    killPID = 0;
+    signal(SIGINT, signalHandler);
+
     //backup of stdin
     int backupin = dup(fileno(stdin));
     int backupout = dup(fileno(stdout));
@@ -324,42 +337,50 @@ bool prompting(int *systemVariables, char **envp)
     strcat(prompt, "# ");
 
     char *line = NULL;//, *args[MAX_ARGS];
-    while (exit == false && (line = linenoise(prompt)) != NULL) {
-        //setting up the terminate signal
-        //signal(SIGINT, signalHandler);
-
-        linenoiseHistoryAdd(line);
-        //fileHandling(backupin);
-
-        //tokening(line, args, ' ');
-        exit = pipeHandling(line, systemVariables, envp);
-        //exit = Commands(args, systemVariables, envp);
-
-        //checking if '>' was introduced into the command
-        if (fileEditing) {
-            dup2(backupout, fileno(stdout));
-        }
-        //checking if we are currently getting data from a file for when source occurs
-        if (fileLines != 0)
+    while (exit == false)
+    {
+        while (exit == false && (line = linenoise(prompt)) != NULL)
         {
-            fileLines--;
-            if (fileLines == 0)
+            linenoiseHistoryAdd(line);
+            //fileHandling(backupin);
+
+            //tokening(line, args, ' ');
+            exit = pipeHandling(line, systemVariables, envp);
+            //exit = Commands(args, systemVariables, envp);
+
+            //checking if '>' was introduced into the command
+            if (fileEditing)
             {
-                //closing the file and giving back control to the terminal and go back
-                fflush(stdin);
-                dup2(backupin, fileno(stdin));
-                return exit;
+                dup2(backupout, fileno(stdout));
             }
+            //checking if we are currently getting data from a file for when source occurs
+            if (fileLines != 0)
+            {
+                fileLines--;
+                if (fileLines == 0)
+                {
+                    //closing the file and giving back control to the terminal and go back
+                    fflush(stdin);
+                    dup2(backupin, fileno(stdin));
+                    return exit;
+                }
+            }
+
+            // Free allocated memory
+            linenoiseFree(line);
+
+            //to make sure the directory is still the same
+            strcpy(prompt, systemArgs[5].value);
+            strcat(prompt, ":");
+            strcat(prompt, systemArgs[2].value);
+            strcat(prompt, "# ");
         }
-
-        // Free allocated memory
-        linenoiseFree(line);
-
-        //to make sure the directory is still the same
-        strcpy(prompt, systemArgs[5].value);
-        strcat(prompt, ":");
-        strcat(prompt, systemArgs[2].value);
-        strcat(prompt, "# ");
+        //printing if ctrl-c was clicked
+        if (exit == false)
+        {
+            printf("\033[A\033[K");
+            printf("%s^C\n", prompt);
+        }
     }
     return exit;
 }
