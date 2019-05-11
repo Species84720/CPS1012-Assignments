@@ -160,6 +160,66 @@ void fileHandling(int backupin)
         }
     }
 }
+
+bool pipeHandling(char **args, int *systemVariables, char **envp)
+{
+    int k = 0;
+    int pipeCount = 0;
+    do
+    {
+        if (strcmp(args[k], "|") == 0)
+        {
+            pipeCount++;
+        }
+        k++;
+    } while (args[k] != NULL);
+
+    //should accept 0 for when there are no pipes
+    for (int i = 0; i <= pipeCount; i++)
+    {
+        pid_t ID;
+        ID = fork();
+
+        //child process
+        if (ID == 0)
+        {
+            bool exit;
+            exit = Commands(args, systemVariables, envp);
+
+            if (exit == false)
+            {
+                _exit(0);
+            }
+            else
+            {
+                _exit(1);
+            }
+        }
+        //parent process
+        else if (ID > 0)
+        {
+            int status = 0;
+            //waiting for the child
+            waitpid(ID, &status, 0);
+            //wait(NULL);
+
+            if (WIFEXITED(status))
+            {
+                status = WEXITSTATUS(status);
+
+                if (status == 1)
+                {
+                    return true;
+                }
+            }
+        }
+        else
+            printf("Error forking was not executed!!!\n");
+    }
+
+    return false;
+}
+
 void prompting(int *systemVariables, char **envp)
 {
     //backup of stdin
@@ -177,7 +237,8 @@ void prompting(int *systemVariables, char **envp)
         fileHandling(backupin);
 
         tokening(line, args);
-        exit = Commands(args, systemVariables, envp);
+        exit = pipeHandling(args, systemVariables, envp);
+        //exit = Commands(args, systemVariables, envp);
 
         //checking if '>' was introduced into the command
         if (backupout != fileno(stdout)) {
