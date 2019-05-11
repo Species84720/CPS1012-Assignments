@@ -66,7 +66,7 @@ void printing(char **args, int systemVariables)
             }
             else
             {
-                printf("\nVariable %s was not found as a system variable!", substr(args[k], 1, 0));
+                printf("Variable %s was not found as a system variable!", substr(args[k], 1, 0));
             }
         }
         else
