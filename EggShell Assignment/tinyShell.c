@@ -217,9 +217,12 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
         {
             bool exit;
 
-            //set the pipe to take the stdout
-            close(pipeConnect[PIPE_READ]);
-            dup2(pipeConnect[PIPE_WRITE], fileno(stdout));
+            if (i != pipeCount)
+            {
+                //set the pipe to take the stdout
+                close(pipeConnect[PIPE_READ]);
+                dup2(pipeConnect[PIPE_WRITE], fileno(stdout));
+            }
 
             exit = Commands(args, systemVariables, envp);
             //and set stdout back to normal since it already sent the data required
@@ -262,13 +265,15 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
                     }
                     else
                     {
+                        /*
                         char buffer[1];
                         while (read(pipeConnect[0], buffer, 1) > 0)
                         {
                             write(fileno(stdout), buffer, fileno(stdout));
-                            //and set stdin to normal as it is now already filled
-                            dup2(backupin, fileno(stdin));
                         }
+                         */
+                        //and set stdin to normal as it is now already filled
+                        dup2(backupin, fileno(stdin));
                     }
                 }
                 else
