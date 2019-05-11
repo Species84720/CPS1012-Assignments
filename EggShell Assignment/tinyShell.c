@@ -146,6 +146,20 @@ void signalHandler(int signal)
     //int success = kill(process, SIGINT);
 }
 
+void fileHandling(int backupin)
+{
+    if (backupin != fileno(stdin)) {
+        //checking if we are currently getting data from a file
+        if (fileLines != 0) {
+            fileLines--;
+            if (fileLines == 0) {
+                //closing the file and giving back control to the terminal
+                fflush(stdin);
+                dup2(backupin, fileno(stdin));
+            }
+        }
+    }
+}
 void prompting(int *systemVariables, char **envp)
 {
     //backup of stdin
@@ -160,17 +174,7 @@ void prompting(int *systemVariables, char **envp)
         //setting up the terminate signal
         //signal(SIGINT, signalHandler);
 
-        if (backupin != fileno(stdin)) {
-            //checking if we are currently getting data from a file
-            if (fileLines != 0) {
-                fileLines--;
-                if (fileLines == 0) {
-                    //closing the file and giving back control to the terminal
-                    fflush(stdin);
-                    dup2(backupin, fileno(stdin));
-                }
-            }
-        }
+        fileHandling(backupin);
 
         tokening(line, args);
         exit = Commands(args, systemVariables, envp);
