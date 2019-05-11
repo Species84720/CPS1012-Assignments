@@ -4,19 +4,23 @@
 
 #include "header.h"
 
-void tokening(char *line, char *args[MAX_ARGS])
+int tokening(char *line, char *args[MAX_ARGS], char With)
 {
     char *token = NULL;
     int tokenIndex;
-    token = strtok(line, " ");
+    token = strtok(line, &With);
 
     for (tokenIndex = 0; token != NULL && tokenIndex < MAX_ARGS - 1; tokenIndex++) {
         args[tokenIndex] = token;
-        token = strtok(NULL, " ");
+        token = strtok(NULL, &With);
     }
 
     // set last token to NULL
     args[tokenIndex] = NULL;
+
+    //-1 since there is one less pipe then tokens
+    // and another -1 because the for loop above adds an extra +1 in the end
+    return tokenIndex - 2;
 }
 
 int checkVariable(char args[], int systemVariables)
@@ -161,22 +165,38 @@ void fileHandling(int backupin)
     }
 }
 
-bool pipeHandling(char **args, int *systemVariables, char **envp)
+bool pipeHandling(char *line, int *systemVariables, char **envp)
 {
     int k = 0;
     int pipeCount = 0;
-    do
-    {
-        if (strcmp(args[k], "|") == 0)
-        {
-            pipeCount++;
-        }
-        k++;
-    } while (args[k] != NULL);
+    int pipePosition = 0;
+
+    //tokening by pipes
+    char *pipeArgs[MAX_ARGS];
+    pipeCount = tokening(line, pipeArgs, '|');
 
     //should accept 0 for when there are no pipes
-    for (int i = 0; i <= pipeCount; i++)
+    int i = 0;
+    while (pipeArgs[i] != NULL)
     {
+        //create pipe
+        int pipeConnect[2];
+        if ( pipe(pipeConnect) == -1 )
+        {
+            printf("Pipe was not created\n");
+            _exit(0);
+        }
+
+        //passing only the needed data before each pipe
+        char *args[MAX_ARGS];
+        tokening(pipeArgs[i], args, ' ');
+
+        //creating the shared memory
+        int protection = PROT_READ | PROT_WRITE;
+        int visibility = MAP_ANONYMOUS | MAP_SHARED;
+        store *sharedMemory = mmap(NULL, 500*sizeof(store), protection, visibility, -1, 0);
+
+        //carrying out the fork
         pid_t ID;
         ID = fork();
 
@@ -185,6 +205,13 @@ bool pipeHandling(char **args, int *systemVariables, char **envp)
         {
             bool exit;
             exit = Commands(args, systemVariables, envp);
+
+            close(pipeConnect[0]);
+            write(pipeConnect[1], systemVariables, sizeof(int*));
+            close(pipeConnect[1]);
+
+            //filling the shared memory
+            memcpy(sharedMemory, systemArgs, 500*sizeof(store));
 
             if (exit == false)
             {
@@ -212,9 +239,21 @@ bool pipeHandling(char **args, int *systemVariables, char **envp)
                     return true;
                 }
             }
+
+            close(pipeConnect[1]);
+            read(pipeConnect[0], systemVariables, sizeof(int*));
+            close(pipeConnect[0]);
+            for (int l = 0; l < systemVariables[0]; l++) {
+                systemArgs[l] = sharedMemory[l];
+            }
         }
         else
             printf("Error forking was not executed!!!\n");
+
+        munmap(sharedMemory, 500* sizeof(store));
+
+        //next pipe set
+        i++;
     }
 
     return false;
@@ -229,15 +268,15 @@ void prompting(int *systemVariables, char **envp)
     //to see if exit was passed to the shell
     bool exit = false;
 
-    char *line = NULL, *args[MAX_ARGS];
+    char *line = NULL;//, *args[MAX_ARGS];
     while (exit == false && (line = linenoise(systemArgs[5].value)) != NULL) {
         //setting up the terminate signal
         //signal(SIGINT, signalHandler);
 
         fileHandling(backupin);
 
-        tokening(line, args);
-        exit = pipeHandling(args, systemVariables, envp);
+        //tokening(line, args, ' ');
+        exit = pipeHandling(line, systemVariables, envp);
         //exit = Commands(args, systemVariables, envp);
 
         //checking if '>' was introduced into the command

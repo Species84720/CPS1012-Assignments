@@ -206,7 +206,7 @@ void ChangeArgs(char **args, int k)
         free(temp);
 
         //tokenize the new string to take place of the old arguments
-        tokening(code, args);
+        tokening(code, args, ' ');
     }
     else
     {

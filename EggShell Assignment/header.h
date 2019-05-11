@@ -16,6 +16,7 @@
 #include <sys/fcntl.h>
 #include <signal.h>
 #include <sys/wait.h>
+#include <sys/mman.h>
 
 #define MAX_ARGS 255
 
@@ -30,7 +31,7 @@ typedef struct linked_list
 store systemArgs[500];
 int fileLines;
 
-void tokening(char *line, char *args[MAX_ARGS]);
+int tokening(char *line, char *args[MAX_ARGS], char With);
 int checkVariable(char args[], int systemVariables);
 void setVariable(char **args, int *systemVariables);
 char *upperCase(char *args);

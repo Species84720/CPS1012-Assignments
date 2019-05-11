@@ -27,6 +27,8 @@ signal.h
 -
 sys/wait.h
 -
+sys/mman.h
+-
 
 /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
 
