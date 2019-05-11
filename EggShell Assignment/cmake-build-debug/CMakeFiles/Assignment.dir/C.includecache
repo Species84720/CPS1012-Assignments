@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Controllers.c
+header.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Printing.c
+header.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
 /cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/external.c
 header.h
 /cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
@@ -31,6 +39,16 @@ signal.h
 -
 sys/wait.h
 -
+sys/mman.h
+-
 
 /cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/main.c
+header.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/tinyShell.c
+header.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
 

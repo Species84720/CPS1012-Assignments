@@ -19,8 +19,7 @@ int tokening(char *line, char *args[MAX_ARGS], char With)
     args[tokenIndex] = NULL;
 
     //-1 since there is one less pipe then tokens
-    // and another -1 because the for loop above adds an extra +1 in the end
-    return tokenIndex - 2;
+    return tokenIndex - 1;
 }
 
 int checkVariable(char args[], int systemVariables)
@@ -169,9 +168,11 @@ void fileHandling(int backupin)
 
 bool pipeHandling(char *line, int *systemVariables, char **envp)
 {
-    int k = 0;
+    //backup of stdin
+    int backupin = dup(fileno(stdin));
+    int backupout = dup(fileno(stdout));
+
     int pipeCount = 0;
-    int pipePosition = 0;
 
     //tokening by pipes
     char *pipeArgs[MAX_ARGS];
@@ -181,11 +182,17 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
     int i = 0;
     while (pipeArgs[i] != NULL)
     {
-        //create pipe
+        //create pipes
         int pipeConnect[2];
+        int pipeVariables[2];
         if ( pipe(pipeConnect) == -1 )
         {
-            printf("Pipe was not created\n");
+            printf("Pipe for information was not created\n");
+            _exit(0);
+        }
+        if ( pipe(pipeVariables) == -1 )
+        {
+            printf("Pipe for variables was not created\n");
             _exit(0);
         }
 
@@ -206,11 +213,18 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
         if (ID == 0)
         {
             bool exit;
-            exit = Commands(args, systemVariables, envp);
 
-            close(pipeConnect[0]);
-            write(pipeConnect[1], systemVariables, sizeof(int*));
-            close(pipeConnect[1]);
+            //set the pipe to take the stdout
+            close(pipeConnect[PIPE_READ]);
+            dup2(pipeConnect[PIPE_WRITE], fileno(stdout));
+
+            exit = Commands(args, systemVariables, envp);
+            //and set stdout back to normal since it already sent the data required
+            dup2(backupout, fileno(stdout));
+
+            close(pipeVariables[PIPE_READ]);
+            write(pipeVariables[PIPE_WRITE], systemVariables, sizeof(int*));
+            close(pipeVariables[PIPE_WRITE]);
 
             //filling the shared memory
             memcpy(sharedMemory, systemArgs, 500*sizeof(store));
@@ -236,17 +250,34 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
             {
                 status = WEXITSTATUS(status);
 
+                close(pipeConnect[PIPE_WRITE]);
+                if (i + 1 > pipeCount)
+                {
+                    char buffer[1];
+                    while(read(pipeConnect[0], buffer, 1) > 0)
+                    {
+                        write(fileno(stdout), buffer, fileno(stdout));
+                        //and set stdin to normal as it is now already filled
+                        dup2(backupin, fileno(stdin));
+                    }
+                }
+                else
+                {
+                    dup2(pipeConnect[PIPE_READ], fileno(stdin));
+                }
+                close(pipeConnect[PIPE_READ]);
+
+                close(pipeVariables[PIPE_WRITE]);
+                read(pipeVariables[PIPE_READ], systemVariables, sizeof(int*));
+                close(pipeVariables[PIPE_READ]);
+                for (int l = 0; l < systemVariables[0]; l++) {
+                    systemArgs[l] = sharedMemory[l];
+                }
+
                 if (status == 1)
                 {
                     return true;
                 }
-            }
-
-            close(pipeConnect[1]);
-            read(pipeConnect[0], systemVariables, sizeof(int*));
-            close(pipeConnect[0]);
-            for (int l = 0; l < systemVariables[0]; l++) {
-                systemArgs[l] = sharedMemory[l];
             }
         }
         else

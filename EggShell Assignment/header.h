@@ -19,6 +19,8 @@
 #include <sys/mman.h>
 
 #define MAX_ARGS 255
+#define PIPE_READ 0
+#define PIPE_WRITE 1
 
 typedef struct linked_list
 {
