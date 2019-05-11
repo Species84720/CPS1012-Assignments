@@ -328,6 +328,7 @@ bool prompting(int *systemVariables, char **envp)
         //setting up the terminate signal
         //signal(SIGINT, signalHandler);
 
+        linenoiseHistoryAdd(line);
         //fileHandling(backupin);
 
         //tokening(line, args, ' ');
