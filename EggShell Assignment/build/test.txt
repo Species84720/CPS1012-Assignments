@@ -2,6 +2,6 @@ print this is a test!!!
 print hello | figlet
 print my name is $USER
 all
-$USER=JUAN
+USER=JUAN
 print $USER
-exit
+

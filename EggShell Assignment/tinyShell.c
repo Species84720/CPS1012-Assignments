@@ -153,11 +153,14 @@ void signalHandler(int signal)
 
 void fileHandling(int backupin)
 {
-    if (backupin != fileno(stdin)) {
+    if (backupin != fileno(stdin))
+    {
         //checking if we are currently getting data from a file
-        if (fileLines != 0) {
+        if (fileLines != 0)
+        {
             fileLines--;
-            if (fileLines == 0) {
+            if (fileLines == 0)
+            {
                 //closing the file and giving back control to the terminal
                 fflush(stdin);
                 dup2(backupin, fileno(stdin));
@@ -299,7 +302,7 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
     return false;
 }
 
-void prompting(int *systemVariables, char **envp)
+bool prompting(int *systemVariables, char **envp)
 {
     //backup of stdin
     int backupin = dup(fileno(stdin));
@@ -320,15 +323,27 @@ void prompting(int *systemVariables, char **envp)
         //setting up the terminate signal
         //signal(SIGINT, signalHandler);
 
-        fileHandling(backupin);
+        //fileHandling(backupin);
 
         //tokening(line, args, ' ');
         exit = pipeHandling(line, systemVariables, envp);
         //exit = Commands(args, systemVariables, envp);
 
         //checking if '>' was introduced into the command
-        if (backupout != fileno(stdout)) {
+        if (fileEditing) {
             dup2(backupout, fileno(stdout));
+        }
+        //checking if we are currently getting data from a file for when source occurs
+        if (fileLines != 0)
+        {
+            fileLines--;
+            if (fileLines == 0)
+            {
+                //closing the file and giving back control to the terminal and go back
+                fflush(stdin);
+                dup2(backupin, fileno(stdin));
+                return exit;
+            }
         }
 
         // Free allocated memory
@@ -340,6 +355,7 @@ void prompting(int *systemVariables, char **envp)
         strcat(prompt, systemArgs[2].value);
         strcat(prompt, "# ");
     }
+    return exit;
 }
 
 void tiny_shell(char **envp)

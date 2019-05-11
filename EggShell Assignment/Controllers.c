@@ -156,7 +156,7 @@ void removeChar(FILE *file, char character, char *location){
     fclose(file);
 }
 
-void sourceExecution(char **args)
+size_t sourceExecution(char **args)
 {
     //int fd = dup(fileno(stdin));
     FILE *openfd;
@@ -172,13 +172,17 @@ void sourceExecution(char **args)
         removeChar(openfd, '\r', location);
 
         //now reading and using the data - changing the stdin as the file instead of the terminal
-        dup2(open(location, O_RDONLY), fileno(stdin));
+        size_t openedFile = open(location, O_RDONLY);
+        dup2(openedFile, fileno(stdin));
 
         fclose(openfd);
+
+        return openedFile;
     }
     else
     {
         printf("The file %s does not exit!\n", location);
+        return 0;
     }
 }
 
@@ -215,29 +219,25 @@ void ChangeArgs(char **args, int k)
     }
 }
 
-bool Commands (char **args, int *systemVariables, char **envp)
+size_t Redirection(char **args)
 {
-    //if no arguments are passed then do nothing
-    if (args[0] == 0)
-    {
-        return false;
-    }
-
     //loop to find any ">" or ">>" or "<"
     int k = 0;
     do
     {
         if (strcmp(args[k], ">") == 0)
         {
-            dup2(open(args[k + 1], O_RDWR | O_CREAT), fileno(stdout));
+            size_t openedFile = open(args[k + 1], O_RDWR | O_CREAT);
+            dup2(openedFile, fileno(stdout));
             fileEditing = true;
-            break;
+            return openedFile;
         }
         else if (strcmp(args[k], ">>") == 0)
         {
-            dup2(open(args[k + 1], O_RDWR | O_CREAT | O_APPEND), fileno(stdout));
+            size_t openedFile = open(args[k + 1], O_RDWR | O_CREAT);
+            dup2(openedFile, fileno(stdout));
             fileEditing = true;
-            break;
+            return openedFile;
         }
         else if (strcmp(args[k], "<") == 0)
         {
@@ -247,6 +247,22 @@ bool Commands (char **args, int *systemVariables, char **envp)
         }
         k++;
     } while (args[k] != NULL);
+
+    return 0;
+}
+
+bool Commands (char **args, int *systemVariables, char **envp)
+{
+    bool exit = false;
+
+    //if no arguments are passed then do nothing
+    if (args[0] == 0)
+    {
+        return exit;
+    }
+
+    size_t fileOpened;
+    fileOpened = Redirection(args);
 
     //check again to see that the file input has worked
     if (args[0] == 0)
@@ -277,14 +293,21 @@ bool Commands (char **args, int *systemVariables, char **envp)
     }
     else if(strcmp(args[0], "source")==0)
     {
-        sourceExecution(args);
+        fileOpened = sourceExecution(args);
+        exit = prompting(systemVariables, envp);
     }
     else
     {
         externalFunctions(args, envp);
     }
 
-    return false;
+    //to remove the file descriptor
+    if (fileOpened != 0 && fileOpened != -1)
+    {
+        close(fileOpened);
+    }
+
+    return exit;
 }
 
 int setSystemVariables()
