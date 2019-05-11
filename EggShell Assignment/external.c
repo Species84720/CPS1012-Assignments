@@ -37,7 +37,10 @@ void externalFunctions(char **args, char **envp)
         }
         //execution has failed
         if (error == -1)
-            printf("Function was not executed correctly\n");
+        {
+            printf("Function does not exist\n");
+            _exit(0);
+        }
     }
     //parent process
     else if (ID > 0)
