@@ -168,7 +168,7 @@ void fileHandling(int backupin)
 
 bool pipeHandling(char *line, int *systemVariables, char **envp)
 {
-    //backup of stdin
+    //backup of in and out
     int backupin = dup(fileno(stdin));
     int backupout = dup(fileno(stdout));
 
@@ -253,12 +253,19 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
                 close(pipeConnect[PIPE_WRITE]);
                 if (i + 1 > pipeCount)
                 {
-                    char buffer[1];
-                    while(read(pipeConnect[0], buffer, 1) > 0)
+                    if (fileEditing)
                     {
-                        write(fileno(stdout), buffer, fileno(stdout));
-                        //and set stdin to normal as it is now already filled
-                        dup2(backupin, fileno(stdin));
+                        fileEditing = false;
+                    }
+                    else
+                    {
+                        char buffer[1];
+                        while (read(pipeConnect[0], buffer, 1) > 0)
+                        {
+                            write(fileno(stdout), buffer, fileno(stdout));
+                            //and set stdin to normal as it is now already filled
+                            dup2(backupin, fileno(stdin));
+                        }
                     }
                 }
                 else
@@ -297,6 +304,7 @@ void prompting(int *systemVariables, char **envp)
     //backup of stdin
     int backupin = dup(fileno(stdin));
     int backupout = dup(fileno(stdout));
+    fileEditing = false;
 
     //to see if exit was passed to the shell
     bool exit = false;

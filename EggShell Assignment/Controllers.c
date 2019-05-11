@@ -230,11 +230,13 @@ bool Commands (char **args, int *systemVariables, char **envp)
         if (strcmp(args[k], ">") == 0)
         {
             dup2(open(args[k + 1], O_RDWR | O_CREAT), fileno(stdout));
+            fileEditing = true;
             break;
         }
         else if (strcmp(args[k], ">>") == 0)
         {
             dup2(open(args[k + 1], O_RDWR | O_CREAT | O_APPEND), fileno(stdout));
+            fileEditing = true;
             break;
         }
         else if (strcmp(args[k], "<") == 0)

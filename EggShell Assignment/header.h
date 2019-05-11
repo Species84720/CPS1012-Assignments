@@ -32,6 +32,7 @@ typedef struct linked_list
 
 store systemArgs[500];
 int fileLines;
+bool fileEditing;
 
 int tokening(char *line, char *args[MAX_ARGS], char With);
 int checkVariable(char args[], int systemVariables);
