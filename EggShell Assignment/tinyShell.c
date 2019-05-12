@@ -376,11 +376,13 @@ bool prompting(int *systemVariables, char **envp)
             strcat(prompt, "# ");
         }
         //printing if ctrl-c was clicked
+        /*
         if (exit == false)
         {
             printf("\033[A\033[K");
             printf("%s^C\n", prompt);
         }
+        */
     }
     return exit;
 }
