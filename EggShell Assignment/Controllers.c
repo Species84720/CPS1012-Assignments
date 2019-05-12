@@ -245,6 +245,28 @@ size_t Redirection(char **args)
             ChangeArgs(args, k);
             break;
         }
+        else if (strcmp(args[k], "<<<") == 0)
+        {
+            args[k] = NULL;
+            //size_t openedFile = open(args[k + 1], O_RDONLY);
+            //dup2(openedFile, fileno(stdin));
+            //return openedFile;
+
+            //creating a pipe to transform the string into a file
+            int pipes[2];
+            if (pipe(pipes) == -1)
+            {
+                printf("Pipe was unsuccessful\n");
+                return 0;
+            }
+            else
+            {
+                write(pipes[PIPE_WRITE], args[k + 1], sizeof(char*));
+                close(pipes[PIPE_WRITE]);
+                dup2(pipes[PIPE_READ], fileno(stdin));
+            }
+            break;
+        }
         k++;
     } while (args[k] != NULL);
 

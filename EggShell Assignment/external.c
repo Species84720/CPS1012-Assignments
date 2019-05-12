@@ -27,7 +27,7 @@ void externalFunctions(char **args, char **envp)
             strcat(pathChange, args[0]);
             //execution
             error = execvpe(pathChange, args, envp);
-            //execution is successful
+            //execution is successful - never executes
             if (error == 0)
             {
                 printf("success\n");
