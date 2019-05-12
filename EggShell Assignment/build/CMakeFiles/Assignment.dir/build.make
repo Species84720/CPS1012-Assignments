@@ -135,6 +135,45 @@ CMakeFiles/Assignment.dir/external.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment.dir/external.c.s"
 	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/external.c" -o CMakeFiles/Assignment.dir/external.c.s
 
+CMakeFiles/Assignment.dir/VariableHandlers.c.o: CMakeFiles/Assignment.dir/flags.make
+CMakeFiles/Assignment.dir/VariableHandlers.c.o: ../VariableHandlers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Assignment.dir/VariableHandlers.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment.dir/VariableHandlers.c.o   -c "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/VariableHandlers.c"
+
+CMakeFiles/Assignment.dir/VariableHandlers.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment.dir/VariableHandlers.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/VariableHandlers.c" > CMakeFiles/Assignment.dir/VariableHandlers.c.i
+
+CMakeFiles/Assignment.dir/VariableHandlers.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment.dir/VariableHandlers.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/VariableHandlers.c" -o CMakeFiles/Assignment.dir/VariableHandlers.c.s
+
+CMakeFiles/Assignment.dir/TextHandlers.c.o: CMakeFiles/Assignment.dir/flags.make
+CMakeFiles/Assignment.dir/TextHandlers.c.o: ../TextHandlers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Assignment.dir/TextHandlers.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment.dir/TextHandlers.c.o   -c "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/TextHandlers.c"
+
+CMakeFiles/Assignment.dir/TextHandlers.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment.dir/TextHandlers.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/TextHandlers.c" > CMakeFiles/Assignment.dir/TextHandlers.c.i
+
+CMakeFiles/Assignment.dir/TextHandlers.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment.dir/TextHandlers.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/TextHandlers.c" -o CMakeFiles/Assignment.dir/TextHandlers.c.s
+
+CMakeFiles/Assignment.dir/FileHandling.c.o: CMakeFiles/Assignment.dir/flags.make
+CMakeFiles/Assignment.dir/FileHandling.c.o: ../FileHandling.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Assignment.dir/FileHandling.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Assignment.dir/FileHandling.c.o   -c "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/FileHandling.c"
+
+CMakeFiles/Assignment.dir/FileHandling.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Assignment.dir/FileHandling.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/FileHandling.c" > CMakeFiles/Assignment.dir/FileHandling.c.i
+
+CMakeFiles/Assignment.dir/FileHandling.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Assignment.dir/FileHandling.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/FileHandling.c" -o CMakeFiles/Assignment.dir/FileHandling.c.s
+
 # Object files for target Assignment
 Assignment_OBJECTS = \
 "CMakeFiles/Assignment.dir/main.c.o" \
@@ -142,7 +181,10 @@ Assignment_OBJECTS = \
 "CMakeFiles/Assignment.dir/linenoise-master/linenoise.c.o" \
 "CMakeFiles/Assignment.dir/Controllers.c.o" \
 "CMakeFiles/Assignment.dir/Printing.c.o" \
-"CMakeFiles/Assignment.dir/external.c.o"
+"CMakeFiles/Assignment.dir/external.c.o" \
+"CMakeFiles/Assignment.dir/VariableHandlers.c.o" \
+"CMakeFiles/Assignment.dir/TextHandlers.c.o" \
+"CMakeFiles/Assignment.dir/FileHandling.c.o"
 
 # External object files for target Assignment
 Assignment_EXTERNAL_OBJECTS =
@@ -153,9 +195,12 @@ Assignment: CMakeFiles/Assignment.dir/linenoise-master/linenoise.c.o
 Assignment: CMakeFiles/Assignment.dir/Controllers.c.o
 Assignment: CMakeFiles/Assignment.dir/Printing.c.o
 Assignment: CMakeFiles/Assignment.dir/external.c.o
+Assignment: CMakeFiles/Assignment.dir/VariableHandlers.c.o
+Assignment: CMakeFiles/Assignment.dir/TextHandlers.c.o
+Assignment: CMakeFiles/Assignment.dir/FileHandling.c.o
 Assignment: CMakeFiles/Assignment.dir/build.make
 Assignment: CMakeFiles/Assignment.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable Assignment"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable Assignment"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Assignment.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -4,41 +4,6 @@
 
 #include "header.h"
 
-char *substr(char *string, int left, int right) {
-    //setting the new string to take a part of the old string
-    char *newString = malloc(sizeof(string));
-
-    //setting the start of the new string
-    strcpy(newString, "");
-
-    //checking the length of string
-    int length = 0;
-    int n = 0;
-    while (string[n] != '\0')
-    {
-        length++;
-        n++;
-    }
-    //immediately removing the '$'
-    length = length - left;
-
-    //looping to fill the new string
-    int m=0;
-    n=0;
-    while(string[n]!='\0')
-    {
-        if ( n >= left && m < (length - right) ){
-            newString[m] = string[n];
-            m++;
-        }
-        n++;
-    }
-
-    //setting the final
-    newString[m]='\0';
-    return newString;
-}
-
 void printing(char **args, int systemVariables)
 {
     //skipping the print command
@@ -58,7 +23,7 @@ void printing(char **args, int systemVariables)
         else if(args[k][0] == '$')
         {
             int check;
-            args[k] = upperCase(args[k]);
+            //args[k] = upperCase(args[k]);
             check = checkVariable(substr(args[k], 1, 0), systemVariables);
             if (check != -1)
             {

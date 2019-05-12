@@ -5,6 +5,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/Assignment.dir/Controllers.c.o"
   "CMakeFiles/Assignment.dir/Printing.c.o"
   "CMakeFiles/Assignment.dir/external.c.o"
+  "CMakeFiles/Assignment.dir/VariableHandlers.c.o"
+  "CMakeFiles/Assignment.dir/TextHandlers.c.o"
+  "CMakeFiles/Assignment.dir/FileHandling.c.o"
   "Assignment.pdb"
   "Assignment"
 )

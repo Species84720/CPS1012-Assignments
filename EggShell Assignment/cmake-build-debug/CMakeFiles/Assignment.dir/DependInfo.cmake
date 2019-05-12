@@ -5,7 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Controllers.c" "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/cmake-build-debug/CMakeFiles/Assignment.dir/Controllers.c.o"
+  "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/FileHandling.c" "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/cmake-build-debug/CMakeFiles/Assignment.dir/FileHandling.c.o"
   "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Printing.c" "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/cmake-build-debug/CMakeFiles/Assignment.dir/Printing.c.o"
+  "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/TextHandlers.c" "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/cmake-build-debug/CMakeFiles/Assignment.dir/TextHandlers.c.o"
+  "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/VariableHandlers.c" "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/cmake-build-debug/CMakeFiles/Assignment.dir/VariableHandlers.c.o"
   "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/external.c" "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/cmake-build-debug/CMakeFiles/Assignment.dir/external.c.o"
   "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.c" "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/cmake-build-debug/CMakeFiles/Assignment.dir/linenoise-master/linenoise.c.o"
   "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/main.c" "/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/cmake-build-debug/CMakeFiles/Assignment.dir/main.c.o"

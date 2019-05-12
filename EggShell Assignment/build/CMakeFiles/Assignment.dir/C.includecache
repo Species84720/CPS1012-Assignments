@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Controllers.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/FileHandling.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Printing.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/TextHandlers.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/VariableHandlers.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/external.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
 /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
 stdio.h
 -
@@ -31,6 +55,10 @@ sys/mman.h
 -
 
 /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
+
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/main.c
+header.h
+/mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
 
 /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/tinyShell.c
 header.h

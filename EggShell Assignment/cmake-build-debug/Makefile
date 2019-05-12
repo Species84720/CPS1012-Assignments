@@ -150,6 +150,33 @@ Controllers.c.s:
 	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/Controllers.c.s
 .PHONY : Controllers.c.s
 
+FileHandling.o: FileHandling.c.o
+
+.PHONY : FileHandling.o
+
+# target to build an object file
+FileHandling.c.o:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/FileHandling.c.o
+.PHONY : FileHandling.c.o
+
+FileHandling.i: FileHandling.c.i
+
+.PHONY : FileHandling.i
+
+# target to preprocess a source file
+FileHandling.c.i:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/FileHandling.c.i
+.PHONY : FileHandling.c.i
+
+FileHandling.s: FileHandling.c.s
+
+.PHONY : FileHandling.s
+
+# target to generate assembly for a file
+FileHandling.c.s:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/FileHandling.c.s
+.PHONY : FileHandling.c.s
+
 Printing.o: Printing.c.o
 
 .PHONY : Printing.o
@@ -176,6 +203,60 @@ Printing.s: Printing.c.s
 Printing.c.s:
 	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/Printing.c.s
 .PHONY : Printing.c.s
+
+TextHandlers.o: TextHandlers.c.o
+
+.PHONY : TextHandlers.o
+
+# target to build an object file
+TextHandlers.c.o:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/TextHandlers.c.o
+.PHONY : TextHandlers.c.o
+
+TextHandlers.i: TextHandlers.c.i
+
+.PHONY : TextHandlers.i
+
+# target to preprocess a source file
+TextHandlers.c.i:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/TextHandlers.c.i
+.PHONY : TextHandlers.c.i
+
+TextHandlers.s: TextHandlers.c.s
+
+.PHONY : TextHandlers.s
+
+# target to generate assembly for a file
+TextHandlers.c.s:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/TextHandlers.c.s
+.PHONY : TextHandlers.c.s
+
+VariableHandlers.o: VariableHandlers.c.o
+
+.PHONY : VariableHandlers.o
+
+# target to build an object file
+VariableHandlers.c.o:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/VariableHandlers.c.o
+.PHONY : VariableHandlers.c.o
+
+VariableHandlers.i: VariableHandlers.c.i
+
+.PHONY : VariableHandlers.i
+
+# target to preprocess a source file
+VariableHandlers.c.i:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/VariableHandlers.c.i
+.PHONY : VariableHandlers.c.i
+
+VariableHandlers.s: VariableHandlers.c.s
+
+.PHONY : VariableHandlers.s
+
+# target to generate assembly for a file
+VariableHandlers.c.s:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/VariableHandlers.c.s
+.PHONY : VariableHandlers.c.s
 
 external.o: external.c.o
 
@@ -297,9 +378,18 @@ help:
 	@echo "... Controllers.o"
 	@echo "... Controllers.i"
 	@echo "... Controllers.s"
+	@echo "... FileHandling.o"
+	@echo "... FileHandling.i"
+	@echo "... FileHandling.s"
 	@echo "... Printing.o"
 	@echo "... Printing.i"
 	@echo "... Printing.s"
+	@echo "... TextHandlers.o"
+	@echo "... TextHandlers.i"
+	@echo "... TextHandlers.s"
+	@echo "... VariableHandlers.o"
+	@echo "... VariableHandlers.i"
+	@echo "... VariableHandlers.s"
 	@echo "... external.o"
 	@echo "... external.i"
 	@echo "... external.s"

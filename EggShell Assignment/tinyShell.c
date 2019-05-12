@@ -4,176 +4,6 @@
 
 #include "header.h"
 
-int tokening(char *line, char *args[MAX_ARGS], char With)
-{
-    char *token = NULL;
-    int tokenIndex;
-    token = strtok(line, &With);
-
-    for (tokenIndex = 0; token != NULL && tokenIndex < MAX_ARGS - 1; tokenIndex++) {
-        args[tokenIndex] = token;
-        token = strtok(NULL, &With);
-    }
-
-    // set last token to NULL
-    args[tokenIndex] = NULL;
-
-    //-1 since there is one less pipe then tokens
-    return tokenIndex - 1;
-}
-
-int checkVariable(char args[], int systemVariables)
-{
-    int l = 0;
-    for (l = 0; l < systemVariables; l++)
-    {
-        if (strcmp(args, systemArgs[l].key) == 0)
-        {
-            return l;
-        }
-    }
-
-    //seeing if the variable was found and if not return the error
-    if (l == systemVariables)
-    {
-        return -1;
-    }
-}
-
-char *upperCase(char *args)
-{
-    int k = 0;
-    if (args[k] == '$')
-    {
-        k++;
-    }
-    while (args[k] != '\0')
-    {
-        args[k] = toupper(args[k]);
-        k++;
-    }
-    return args;
-}
-
-void setVariable(char **args, int *systemVariables)
-{
-    int check;
-
-    //finding the "=" in your string
-    char *equals;
-    //if the equal is within these 2 then the variable is nothing and that cannot happen
-    equals = strstr(args[0], "=");
-    //if no equals is found then an error is given
-    if (equals == NULL)
-    {
-        printf("No \"=\" condition was found in the condition\n");
-        return;
-    }
-    else if (args[0][0] == '=')
-    {
-        printf("No variable name was given to value %s\n", equals);
-        return;
-    }
-
-    //setting the "=" position to null
-    equals[0] = '\0';
-    //upper case the variables
-    args[0] = upperCase(args[0]);
-    check = checkVariable(args[0], systemVariables[0]);
-    //setting the pointer to after the "="
-    equals = &equals[1];
-    //if found change existent variable
-    if (check != -1)
-    {
-        //allocating the split value to the current variable
-        if(equals[0] != '$')
-        {
-            strcpy(systemArgs[check].value, equals);
-        }
-        else
-        {
-            //since it is a variable
-            upperCase(equals);
-
-            int checkVar;
-            checkVar = checkVariable(substr(equals, 1, 0), systemVariables[0]);
-            if (checkVar != -1)
-            {
-                strcpy(systemArgs[check].value, systemArgs[checkVar].value);
-            }
-            else
-            {
-                printf("\nVariable %s was not found as a system variable!\n", substr(args[0], 1, 0));
-            }
-        }
-
-        /*
-        if (check == 5)
-        {
-            strcat(systemArgs[check].value, "> ");
-        }
-        */
-        return;
-    }
-
-    //if not found create a new variable
-    if(equals[0] != '$')
-    {
-        strcpy(systemArgs[systemVariables[0]].key, args[0]);
-        strcpy(systemArgs[systemVariables[0]].value, equals);
-    }
-    else
-    {
-        //since it is a variable
-        upperCase(equals);
-
-        int checkVar;
-        checkVar = checkVariable(substr(equals, 1, 0), systemVariables[0]);
-        if (checkVar != -1)
-        {
-            strcpy(systemArgs[systemVariables[0]].key, args[0]);
-            strcpy(systemArgs[systemVariables[0]].value, systemArgs[checkVar].value);
-        }
-        else
-        {
-            printf("\nVariable %s was not found as a system variable!\n", substr(equals, 1, 0));
-        }
-    }
-
-    //since the values are back by a value of 1 then the addition can be done after the copying
-    systemVariables[0] = systemVariables[0] + 1;
-}
-
-void signalHandler(int sig)
-{
-    //resetting signal
-    signal(SIGINT, signalHandler);
-
-    //getting the pid of the current process
-    if (killPID != 0) {
-        kill(killPID, SIGINT);
-        fflush(stdout);
-    }
-}
-
-void fileHandling(int backupin)
-{
-    if (backupin != fileno(stdin))
-    {
-        //checking if we are currently getting data from a file
-        if (fileLines != 0)
-        {
-            fileLines--;
-            if (fileLines == 0)
-            {
-                //closing the file and giving back control to the terminal
-                fflush(stdin);
-                dup2(backupin, fileno(stdin));
-            }
-        }
-    }
-}
-
 bool pipeHandling(char *line, int *systemVariables, char **envp)
 {
     //backup of in and out
@@ -209,9 +39,7 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
         tokening(pipeArgs[i], args, ' ');
 
         //creating the shared memory
-        int protection = PROT_READ | PROT_WRITE;
-        int visibility = MAP_ANONYMOUS | MAP_SHARED;
-        store *sharedMemory = mmap(NULL, 500*sizeof(store), protection, visibility, -1, 0);
+        store *sharedMemory = mmap(NULL, 500*sizeof(store), PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
 
         //carrying out the fork
         pid_t ID;
@@ -294,8 +122,17 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
                 close(pipeVariables[PIPE_WRITE]);
                 read(pipeVariables[PIPE_READ], systemVariables, sizeof(int*));
                 close(pipeVariables[PIPE_READ]);
-                for (int l = 0; l < systemVariables[0]; l++) {
+                for (int l = 0; l < systemVariables[0]; l++)
+                {
                     systemArgs[l] = sharedMemory[l];
+                }
+
+                //changing the parents chdir
+                if (chdir(systemArgs[2].value) != 0)
+                {
+                    printf("Location change error\n");
+                    //taking back the previous location
+                    strcpy(systemArgs[2].value, systemArgs[7].value);
                 }
 
                 if (status == 1)
@@ -341,29 +178,19 @@ bool prompting(int *systemVariables, char **envp)
     {
         while (exit == false && (line = linenoise(prompt)) != NULL)
         {
+            //to add history to the shell
             linenoiseHistoryAdd(line);
-            //fileHandling(backupin);
 
+            //used before the forking of the command handler
             //tokening(line, args, ' ');
-            exit = pipeHandling(line, systemVariables, envp);
-            //exit = Commands(args, systemVariables, envp);
 
-            //checking if '>' was introduced into the command
-            if (fileEditing)
+            exit = pipeHandling(line, systemVariables, envp);
+
+            //checking if a file is currently being updated
+            int check = fileHandling(backupin, backupout);
+            if (check == 0)
             {
-                dup2(backupout, fileno(stdout));
-            }
-            //checking if we are currently getting data from a file for when source occurs
-            if (fileLines != 0)
-            {
-                fileLines--;
-                if (fileLines == 0)
-                {
-                    //closing the file and giving back control to the terminal and go back
-                    fflush(stdin);
-                    dup2(backupin, fileno(stdin));
-                    return exit;
-                }
+                return exit;
             }
 
             // Free allocated memory

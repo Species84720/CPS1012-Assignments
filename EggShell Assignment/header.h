@@ -35,21 +35,39 @@ int fileLines;
 bool fileEditing;
 pid_t killPID;
 
-int tokening(char *line, char *args[MAX_ARGS], char With);
+//main.c
+void signalHandler(int signal);
+
+//VariableHandler.c
 int checkVariable(char args[], int systemVariables);
 void setVariable(char **args, int *systemVariables);
-char *upperCase(char *args);
-void signalHandler(int signal);
+
+//tinyShell.c
 bool prompting(int *systemVariables, char **envp);
 void tiny_shell(char **envp);
 
+//TextHandlers.c
+int tokening(char *line, char *args[MAX_ARGS], char With);
+char *substr(char *string, int left, int right);
+char *processSlash(char **args, char *location, int start);
+void removeChar(FILE *file, char character, char *location);
+//char *upperCase(char *args);
+
+//FileHandler.c
+int fileHandling(int backupin, int backupout);
+void ChangeArgs(char **args, int k);
+size_t Redirection(char **args);
+
+//Controllers.c
+size_t sourceExecution(char **args);
 bool Commands (char **args, int *systemVariables, char **envp);
 int setSystemVariables();
 
-char *substr(char *string, int left, int right);
+//Printing.c
 void printing(char **args, int systemVariables);
 void printSystemVariables(int SystemVariables);
 
-void externalFunctions(char **args, char **envp);
+//external.c
+void externalFunctions(int *systemVariables, char **args, char **envp);
 
 #endif //ASSIGNMENT_HEADER_H
