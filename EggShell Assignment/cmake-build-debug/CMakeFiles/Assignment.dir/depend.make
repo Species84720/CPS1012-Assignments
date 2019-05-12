@@ -5,9 +5,21 @@ CMakeFiles/Assignment.dir/Controllers.c.o: ../Controllers.c
 CMakeFiles/Assignment.dir/Controllers.c.o: ../header.h
 CMakeFiles/Assignment.dir/Controllers.c.o: ../linenoise-master/linenoise.h
 
+CMakeFiles/Assignment.dir/FileHandling.c.o: ../FileHandling.c
+CMakeFiles/Assignment.dir/FileHandling.c.o: ../header.h
+CMakeFiles/Assignment.dir/FileHandling.c.o: ../linenoise-master/linenoise.h
+
 CMakeFiles/Assignment.dir/Printing.c.o: ../Printing.c
 CMakeFiles/Assignment.dir/Printing.c.o: ../header.h
 CMakeFiles/Assignment.dir/Printing.c.o: ../linenoise-master/linenoise.h
+
+CMakeFiles/Assignment.dir/TextHandlers.c.o: ../TextHandlers.c
+CMakeFiles/Assignment.dir/TextHandlers.c.o: ../header.h
+CMakeFiles/Assignment.dir/TextHandlers.c.o: ../linenoise-master/linenoise.h
+
+CMakeFiles/Assignment.dir/VariableHandlers.c.o: ../VariableHandlers.c
+CMakeFiles/Assignment.dir/VariableHandlers.c.o: ../header.h
+CMakeFiles/Assignment.dir/VariableHandlers.c.o: ../linenoise-master/linenoise.h
 
 CMakeFiles/Assignment.dir/external.c.o: ../external.c
 CMakeFiles/Assignment.dir/external.c.o: ../header.h

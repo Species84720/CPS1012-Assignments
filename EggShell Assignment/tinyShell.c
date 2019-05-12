@@ -26,12 +26,14 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
         if ( pipe(pipeConnect) == -1 )
         {
             printf("Pipe for information was not created\n");
-            _exit(0);
+            strcpy(systemArgs[8].value, "1");
+            return true;
         }
         if ( pipe(pipeVariables) == -1 )
         {
             printf("Pipe for variables was not created\n");
-            _exit(0);
+            strcpy(systemArgs[8].value, "1");
+            return true;
         }
 
         //passing only the needed data before each pipe
@@ -75,7 +77,8 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
             }
             else
             {
-                _exit(1);
+                //means to exit the EggShell
+                _exit(2);
             }
         }
         //parent process
@@ -135,7 +138,7 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
                     strcpy(systemArgs[2].value, systemArgs[7].value);
                 }
 
-                if (status == 1)
+                if (status == 2)
                 {
                     return true;
                 }

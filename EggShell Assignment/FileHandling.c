@@ -73,6 +73,7 @@ void ChangeArgs(char **args, int k)
     else
     {
         printf("The file %s does not exit!\n", location);
+        strcpy(systemArgs[8].value, "1");
         args[0] = 0;
     }
 }
@@ -115,6 +116,7 @@ size_t Redirection(char **args)
             if (pipe(pipes) == -1)
             {
                 printf("Pipe was unsuccessful\n");
+                strcpy(systemArgs[8].value, "1");
                 return 0;
             }
             else

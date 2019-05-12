@@ -30,6 +30,7 @@ size_t sourceExecution(char **args)
     else
     {
         printf("The file %s does not exit!\n", location);
+        strcpy(systemArgs[8].value, "1");
         return 0;
     }
 }
@@ -98,15 +99,34 @@ void externalFunctions(int *systemVariables, char **args, char **envp)
         //execution has failed
         if (error == -1)
         {
-            printf("Function does not exist\n");
-            _exit(0);
+            printf("%s: Function does not exist\n", args[0]);
+            _exit(1);
         }
     }
     //parent process
-    else if (ID > 0)
-    {
+    else if (ID > 0) {
+        int status = 0;
+
+        //setting up the terminate signal
+        killPID = 0;
+
         //waiting for the child
-        wait(NULL);
+        //wait(NULL);
+        waitpid(ID, &status, 0);
+        if (WIFEXITED(status)) {
+            status = WEXITSTATUS(status);
+
+            //execution has failed
+            if (status == 1)
+            {
+                //setting the exitcode to show that the function has failed
+                strcpy(systemArgs[8].value, "1");
+            }
+            else if (status == 0)
+            {
+                strcpy(systemArgs[8].value, "0");
+            }
+        }
     }
     else
         printf("Error forking was not executed!!!\n");

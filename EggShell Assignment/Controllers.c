@@ -40,6 +40,7 @@ void directoryChanger(char **args)
                 if (chdir(systemArgs[2].value) != 0)
                 {
                     printf("Location change error\n");
+                    strcpy(systemArgs[8].value, "1");
                 }
 
                 //to go over the first dot
@@ -77,9 +78,11 @@ void directoryChanger(char **args)
                     printf("Location %s does not exist\n", location);
                     strcpy(systemArgs[2].value, backup);
                     chdir(backup);
+                    strcpy(systemArgs[8].value, "1");
                 } else {
                     strcpy(systemArgs[2].value, location);
                     strcpy(systemArgs[7].value, backup);
+                    strcpy(systemArgs[8].value, "0");
                 }
                 free(location);
             }
@@ -176,7 +179,10 @@ int setSystemVariables()
     strcpy(systemArgs[7].key, "OLDPWD");
     strcpy(systemArgs[7]. value, getenv("OLDPWD"));
 
+    strcpy(systemArgs[8].key, "EXITCODE");
+    strcpy(systemArgs[8].value, "0");
+
     fileLines = 0;
 
-    return 8;
+    return 9;
 }

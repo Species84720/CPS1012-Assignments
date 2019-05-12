@@ -34,11 +34,13 @@ void setVariable(char **args, int *systemVariables)
     if (equals == NULL)
     {
         printf("No \"=\" condition was found in the condition\n");
+        strcpy(systemArgs[8].value, "1");
         return;
     }
     else if (args[0][0] == '=')
     {
         printf("No variable name was given to value %s\n", equals);
+        strcpy(systemArgs[8].value, "1");
         return;
     }
 
@@ -67,10 +69,13 @@ void setVariable(char **args, int *systemVariables)
             if (checkVar != -1)
             {
                 strcpy(systemArgs[check].value, systemArgs[checkVar].value);
+                strcpy(systemArgs[8].value, "0");
             }
+            //should never occur
             else
             {
                 printf("\nVariable %s was not found as a system variable!\n", substr(args[0], 1, 0));
+                strcpy(systemArgs[8].value, "1");
             }
         }
 
@@ -88,6 +93,7 @@ void setVariable(char **args, int *systemVariables)
     {
         strcpy(systemArgs[systemVariables[0]].key, args[0]);
         strcpy(systemArgs[systemVariables[0]].value, equals);
+        strcpy(systemArgs[8].value, "0");
     }
     else
     {
@@ -100,10 +106,12 @@ void setVariable(char **args, int *systemVariables)
         {
             strcpy(systemArgs[systemVariables[0]].key, args[0]);
             strcpy(systemArgs[systemVariables[0]].value, systemArgs[checkVar].value);
+            strcpy(systemArgs[8].value, "0");
         }
         else
         {
             printf("\nVariable %s was not found as a system variable!\n", substr(equals, 1, 0));
+            strcpy(systemArgs[8].value, "1");
         }
     }
 

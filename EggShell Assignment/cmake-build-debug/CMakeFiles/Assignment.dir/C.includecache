@@ -10,7 +10,11 @@
 header.h
 /cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
 
-/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/Printing.c
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/FileHandling.c
+header.h
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
+
+/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/VariableHandlers.c
 header.h
 /cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
 
@@ -43,10 +47,6 @@ sys/mman.h
 -
 
 /cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
-
-/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/main.c
-header.h
-/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/header.h
 
 /cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/tinyShell.c
 header.h
