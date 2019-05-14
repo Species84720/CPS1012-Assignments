@@ -13,7 +13,9 @@ void printing(char **args, int systemVariables)
     while (args[k] != NULL) {
         if (args[k][0] == '\\')
         {
-            printf("%s ", substr(args[k], 1, 0));
+            char *string = substr(args[k], 1, 0);
+            printf("%s ", string);
+            free(string);
         }
         else if(args[k][0] == '>' || args[k][0] == '<')
         {
@@ -24,15 +26,17 @@ void printing(char **args, int systemVariables)
         {
             int check;
             //args[k] = upperCase(args[k]);
-            check = checkVariable(substr(args[k], 1, 0), systemVariables);
+            char *string = substr(args[k], 1, 0);
+            check = checkVariable(string, systemVariables);
             if (check != -1)
             {
                 printf("%s ", systemArgs[check].value);
             }
             else
             {
-                printf("Variable %s was not found as a system variable!", substr(args[k], 1, 0));
+                printf("Variable %s was not found as a system variable!", string);
             }
+            free(string);
         }
         else
         {

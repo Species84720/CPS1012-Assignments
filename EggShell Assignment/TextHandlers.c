@@ -4,20 +4,21 @@
 
 #include "header.h"
 
-int tokening(char *line, char *args[MAX_ARGS], char With)
+int tokening(char *line, char *args[MAX_ARGS], char *With)
 {
     char *token = NULL;
     int tokenIndex;
-    token = strtok(line, &With);
+    token = strtok(line, With);
 
     for (tokenIndex = 0; token != NULL && tokenIndex < MAX_ARGS - 1; tokenIndex++) {
         args[tokenIndex] = token;
-        token = strtok(NULL, &With);
+        token = strtok(NULL, With);
     }
 
     // set last token to NULL
     args[tokenIndex] = NULL;
 
+    free(token);
     //-1 since there is one less pipe then tokens
     return tokenIndex - 1;
 }
@@ -126,6 +127,9 @@ void removeChar(FILE *file, char character, char *location)
     file = fopen(location, "w");
     fprintf(file, "%s", code);
     fclose(file);
+
+    //cleaning up
+    free(code);
 }
 
 //only needed if all variables are wished to be upper case

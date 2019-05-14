@@ -90,6 +90,8 @@ void directoryChanger(char **args)
             if (args[k][n] != '\0') {
                 n++;
             }
+
+            free(backup);
         }
     }
 }

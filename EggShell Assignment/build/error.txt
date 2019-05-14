@@ -1,0 +1,1545 @@
+==655== Memcheck, a memory error detector
+==655== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==655== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==655== Command: ./Assignment
+==655== Parent PID: 4
+==655== 
+==655== error calling PR_SET_PTRACER, vgdb might block
+==656== Invalid read of size 4
+==656==    at 0x4EBA254: fclose@@GLIBC_2.2.5 (iofclose.c:48)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ebd0 is 0 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 1
+==656==    at 0x4EC95D6: _IO_un_link (genops.c:54)
+==656==    by 0x4EBA30C: fclose@@GLIBC_2.2.5 (iofclose.c:49)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ebd0 is 0 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EBA30D: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ebd0 is 0 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 8
+==656==    at 0x4EBA314: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec58 is 136 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 8
+==656==    at 0x4EBA324: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ecb8 is 232 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EBA342: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ecb0 is 224 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 8
+==656==    at 0x4EBA35D: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec58 is 136 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EBA364: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ebd0 is 0 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid write of size 8
+==656==    at 0x4EBA366: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ecb8 is 232 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EBA36A: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ecb4 is 228 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EC8194: _IO_file_close_it@@GLIBC_2.2.5 (fileops.c:131)
+==656==    by 0x4EBA386: fclose@@GLIBC_2.2.5 (iofclose.c:53)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec40 is 112 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EBA387: fclose@@GLIBC_2.2.5 (iofclose.c:53)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ebd0 is 0 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 8
+==656==    at 0x4EBA27C: _IO_acquire_lock_fct (libioP.h:797)
+==656==    by 0x4EBA27C: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec58 is 136 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EBA283: _IO_acquire_lock_fct (libioP.h:797)
+==656==    by 0x4EBA283: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ecb4 is 228 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid write of size 8
+==656==    at 0x4EBA3A0: _IO_acquire_lock_fct (libioP.h:797)
+==656==    by 0x4EBA3A0: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ecb8 is 232 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EBA3B8: _IO_acquire_lock_fct (libioP.h:797)
+==656==    by 0x4EBA3B8: fclose@@GLIBC_2.2.5 (iofclose.c:51)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ecb0 is 224 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 8
+==656==    at 0x4EBA28D: fclose@@GLIBC_2.2.5 (iofclose.c:57)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522eca8 is 216 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EC8339: _IO_file_finish@@GLIBC_2.2.5 (fileops.c:170)
+==656==    by 0x4EBA2BD: fclose@@GLIBC_2.2.5 (iofclose.c:57)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec40 is 112 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 8
+==656==    at 0x4ECAC69: _IO_default_finish (genops.c:630)
+==656==    by 0x4EBA2BD: fclose@@GLIBC_2.2.5 (iofclose.c:57)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec08 is 56 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 8
+==656==    at 0x4ECAC87: _IO_default_finish (genops.c:636)
+==656==    by 0x4EBA2BD: fclose@@GLIBC_2.2.5 (iofclose.c:57)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec30 is 96 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 8
+==656==    at 0x4ECACA0: _IO_default_finish (genops.c:639)
+==656==    by 0x4EBA2BD: fclose@@GLIBC_2.2.5 (iofclose.c:57)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec18 is 72 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 1
+==656==    at 0x4ECACB6: _IO_un_link (genops.c:54)
+==656==    by 0x4ECACB6: _IO_default_finish (genops.c:645)
+==656==    by 0x4EBA2BD: fclose@@GLIBC_2.2.5 (iofclose.c:57)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ebd0 is 0 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 4
+==656==    at 0x4EBA2BE: fclose@@GLIBC_2.2.5 (iofclose.c:58)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec90 is 192 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid read of size 8
+==656==    at 0x4EBA2CC: fclose@@GLIBC_2.2.5 (iofclose.c:71)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ec18 is 72 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== Invalid free() / delete / delete[] / realloc()
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10D339: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Address 0x522ebd0 is 0 bytes inside a block of size 552 free'd
+==656==    at 0x4C30D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBA2FD: fclose@@GLIBC_2.2.5 (iofclose.c:77)
+==656==    by 0x10DF83: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==  Block was alloc'd at
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==656==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==656==    by 0x10D2D3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== error calling PR_SET_PTRACER, vgdb might block
+==657== Syscall param write(buf) points to uninitialised byte(s)
+==657==    at 0x4F4C154: write (write.c:27)
+==657==    by 0x109B38: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==  Address 0x522d044 is 4 bytes inside a block of size 8 alloc'd
+==657==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657== 
+==657== error calling PR_SET_PTRACER, vgdb might block
+==657== 
+==657== HEAP SUMMARY:
+==657==     in use at exit: 1,254 bytes in 8 blocks
+==657==   total heap usage: 21 allocs, 14 frees, 8,949 bytes allocated
+==657== 
+==657== 8 bytes in 1 blocks are still reachable in loss record 1 of 8
+==657==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657== 
+==657== 16 bytes in 1 blocks are still reachable in loss record 2 of 8
+==657==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x4ED99B9: strdup (strdup.c:42)
+==657==    by 0x10C3B8: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657== 
+==657== 16 bytes in 1 blocks are still reachable in loss record 3 of 8
+==657==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x4ED99B9: strdup (strdup.c:42)
+==657==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657== 
+==657== 24 bytes in 1 blocks are still reachable in loss record 4 of 8
+==657==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x4ED99B9: strdup (strdup.c:42)
+==657==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657== 
+==657== 32 bytes in 1 blocks are still reachable in loss record 5 of 8
+==657==    at 0x4C2FA3F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x4C31D84: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x10C1CE: linenoiseNoTTY (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10C295: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657== 
+==657== 102 bytes in 1 blocks are definitely lost in loss record 6 of 8
+==657==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x10DEDA: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657== 
+==657== 256 bytes in 1 blocks are definitely lost in loss record 7 of 8
+==657==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x10D2A0: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657== 
+==657== 800 bytes in 1 blocks are still reachable in loss record 8 of 8
+==657==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x10C49C: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10BA4D: linenoiseEdit (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10C15A: linenoiseRaw (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10C393: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==657== 
+==657== LEAK SUMMARY:
+==657==    definitely lost: 358 bytes in 2 blocks
+==657==    indirectly lost: 0 bytes in 0 blocks
+==657==      possibly lost: 0 bytes in 0 blocks
+==657==    still reachable: 896 bytes in 6 blocks
+==657==         suppressed: 0 bytes in 0 blocks
+==657== 
+==657== For counts of detected and suppressed errors, rerun with: -v
+==657== Use --track-origins=yes to see where uninitialised values come from
+==657== ERROR SUMMARY: 32 errors from 28 contexts (suppressed: 0 from 0)
+==658== error calling PR_SET_PTRACER, vgdb might block
+==658== 
+==658== HEAP SUMMARY:
+==658==     in use at exit: 1,275 bytes in 9 blocks
+==658==   total heap usage: 23 allocs, 15 frees, 9,002 bytes allocated
+==658== 
+==658== 8 bytes in 1 blocks are still reachable in loss record 1 of 8
+==658==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==658==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658== 
+==658== 16 bytes in 1 blocks are still reachable in loss record 2 of 8
+==658==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==658==    by 0x4ED99B9: strdup (strdup.c:42)
+==658==    by 0x10C3B8: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658== 
+==658== 16 bytes in 1 blocks are still reachable in loss record 3 of 8
+==658==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==658==    by 0x4ED99B9: strdup (strdup.c:42)
+==658==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658== 
+==658== 32 bytes in 1 blocks are still reachable in loss record 4 of 8
+==658==    at 0x4C2FA3F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==658==    by 0x4C31D84: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==658==    by 0x10C1CE: linenoiseNoTTY (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10C295: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658== 
+==658== 45 bytes in 2 blocks are still reachable in loss record 5 of 8
+==658==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==658==    by 0x4ED99B9: strdup (strdup.c:42)
+==658==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658== 
+==658== 102 bytes in 1 blocks are definitely lost in loss record 6 of 8
+==658==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==658==    by 0x10DEDA: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658== 
+==658== 256 bytes in 1 blocks are definitely lost in loss record 7 of 8
+==658==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==658==    by 0x10D2A0: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658== 
+==658== 800 bytes in 1 blocks are still reachable in loss record 8 of 8
+==658==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==658==    by 0x10C49C: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10BA4D: linenoiseEdit (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10C15A: linenoiseRaw (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10C393: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==658== 
+==658== LEAK SUMMARY:
+==658==    definitely lost: 358 bytes in 2 blocks
+==658==    indirectly lost: 0 bytes in 0 blocks
+==658==      possibly lost: 0 bytes in 0 blocks
+==658==    still reachable: 917 bytes in 7 blocks
+==658==         suppressed: 0 bytes in 0 blocks
+==658== 
+==658== For counts of detected and suppressed errors, rerun with: -v
+==658== ERROR SUMMARY: 31 errors from 27 contexts (suppressed: 0 from 0)
+==659== error calling PR_SET_PTRACER, vgdb might block
+==659== 
+==659== HEAP SUMMARY:
+==659==     in use at exit: 1,275 bytes in 9 blocks
+==659==   total heap usage: 23 allocs, 15 frees, 9,002 bytes allocated
+==659== 
+==659== 8 bytes in 1 blocks are still reachable in loss record 1 of 8
+==659==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==659==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659== 
+==659== 16 bytes in 1 blocks are still reachable in loss record 2 of 8
+==659==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==659==    by 0x4ED99B9: strdup (strdup.c:42)
+==659==    by 0x10C3B8: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659== 
+==659== 16 bytes in 1 blocks are still reachable in loss record 3 of 8
+==659==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==659==    by 0x4ED99B9: strdup (strdup.c:42)
+==659==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659== 
+==659== 32 bytes in 1 blocks are still reachable in loss record 4 of 8
+==659==    at 0x4C2FA3F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==659==    by 0x4C31D84: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==659==    by 0x10C1CE: linenoiseNoTTY (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10C295: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659== 
+==659== 45 bytes in 2 blocks are still reachable in loss record 5 of 8
+==659==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==659==    by 0x4ED99B9: strdup (strdup.c:42)
+==659==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659== 
+==659== 102 bytes in 1 blocks are definitely lost in loss record 6 of 8
+==659==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==659==    by 0x10DEDA: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659== 
+==659== 256 bytes in 1 blocks are definitely lost in loss record 7 of 8
+==659==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==659==    by 0x10D2A0: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659== 
+==659== 800 bytes in 1 blocks are still reachable in loss record 8 of 8
+==659==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==659==    by 0x10C49C: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10BA4D: linenoiseEdit (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10C15A: linenoiseRaw (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10C393: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==659== 
+==659== LEAK SUMMARY:
+==659==    definitely lost: 358 bytes in 2 blocks
+==659==    indirectly lost: 0 bytes in 0 blocks
+==659==      possibly lost: 0 bytes in 0 blocks
+==659==    still reachable: 917 bytes in 7 blocks
+==659==         suppressed: 0 bytes in 0 blocks
+==659== 
+==659== For counts of detected and suppressed errors, rerun with: -v
+==659== ERROR SUMMARY: 31 errors from 27 contexts (suppressed: 0 from 0)
+==661== error calling PR_SET_PTRACER, vgdb might block
+==661== 
+==661== HEAP SUMMARY:
+==661==     in use at exit: 1,306 bytes in 11 blocks
+==661==   total heap usage: 26 allocs, 16 frees, 9,065 bytes allocated
+==661== 
+==661== 8 bytes in 1 blocks are still reachable in loss record 1 of 9
+==661==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661== 
+==661== 8 bytes in 1 blocks are definitely lost in loss record 2 of 9
+==661==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x10DC15: substr (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10D12B: printing (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10CDA1: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661== 
+==661== 16 bytes in 1 blocks are still reachable in loss record 3 of 9
+==661==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x4ED99B9: strdup (strdup.c:42)
+==661==    by 0x10C3B8: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661== 
+==661== 16 bytes in 1 blocks are still reachable in loss record 4 of 9
+==661==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x4ED99B9: strdup (strdup.c:42)
+==661==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661== 
+==661== 32 bytes in 1 blocks are still reachable in loss record 5 of 9
+==661==    at 0x4C2FA3F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x4C31D84: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x10C1CE: linenoiseNoTTY (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10C295: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661== 
+==661== 68 bytes in 3 blocks are still reachable in loss record 6 of 9
+==661==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x4ED99B9: strdup (strdup.c:42)
+==661==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661== 
+==661== 102 bytes in 1 blocks are definitely lost in loss record 7 of 9
+==661==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x10DEDA: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661== 
+==661== 256 bytes in 1 blocks are definitely lost in loss record 8 of 9
+==661==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x10D2A0: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661== 
+==661== 800 bytes in 1 blocks are still reachable in loss record 9 of 9
+==661==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==661==    by 0x10C49C: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10BA4D: linenoiseEdit (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10C15A: linenoiseRaw (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10C393: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==661== 
+==661== LEAK SUMMARY:
+==661==    definitely lost: 366 bytes in 3 blocks
+==661==    indirectly lost: 0 bytes in 0 blocks
+==661==      possibly lost: 0 bytes in 0 blocks
+==661==    still reachable: 940 bytes in 8 blocks
+==661==         suppressed: 0 bytes in 0 blocks
+==661== 
+==661== For counts of detected and suppressed errors, rerun with: -v
+==661== ERROR SUMMARY: 32 errors from 28 contexts (suppressed: 0 from 0)
+==662== error calling PR_SET_PTRACER, vgdb might block
+==662== 
+==662== HEAP SUMMARY:
+==662==     in use at exit: 1,302 bytes in 11 blocks
+==662==   total heap usage: 27 allocs, 17 frees, 9,093 bytes allocated
+==662== 
+==662== 8 bytes in 1 blocks are still reachable in loss record 1 of 8
+==662==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==662==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662== 
+==662== 16 bytes in 1 blocks are still reachable in loss record 2 of 8
+==662==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==662==    by 0x4ED99B9: strdup (strdup.c:42)
+==662==    by 0x10C3B8: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662== 
+==662== 16 bytes in 1 blocks are still reachable in loss record 3 of 8
+==662==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==662==    by 0x4ED99B9: strdup (strdup.c:42)
+==662==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662== 
+==662== 32 bytes in 1 blocks are still reachable in loss record 4 of 8
+==662==    at 0x4C2FA3F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==662==    by 0x4C31D84: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==662==    by 0x10C1CE: linenoiseNoTTY (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10C295: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662== 
+==662== 72 bytes in 4 blocks are still reachable in loss record 5 of 8
+==662==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==662==    by 0x4ED99B9: strdup (strdup.c:42)
+==662==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662== 
+==662== 102 bytes in 1 blocks are definitely lost in loss record 6 of 8
+==662==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==662==    by 0x10DEDA: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662== 
+==662== 256 bytes in 1 blocks are definitely lost in loss record 7 of 8
+==662==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==662==    by 0x10D2A0: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662== 
+==662== 800 bytes in 1 blocks are still reachable in loss record 8 of 8
+==662==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==662==    by 0x10C49C: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10BA4D: linenoiseEdit (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10C15A: linenoiseRaw (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10C393: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==662== 
+==662== LEAK SUMMARY:
+==662==    definitely lost: 358 bytes in 2 blocks
+==662==    indirectly lost: 0 bytes in 0 blocks
+==662==      possibly lost: 0 bytes in 0 blocks
+==662==    still reachable: 944 bytes in 9 blocks
+==662==         suppressed: 0 bytes in 0 blocks
+==662== 
+==662== For counts of detected and suppressed errors, rerun with: -v
+==662== ERROR SUMMARY: 31 errors from 27 contexts (suppressed: 0 from 0)
+==663== error calling PR_SET_PTRACER, vgdb might block
+==663== 
+==663== HEAP SUMMARY:
+==663==     in use at exit: 1,312 bytes in 12 blocks
+==663==   total heap usage: 29 allocs, 18 frees, 9,135 bytes allocated
+==663== 
+==663== 8 bytes in 1 blocks are still reachable in loss record 1 of 8
+==663==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==663==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663== 
+==663== 16 bytes in 1 blocks are still reachable in loss record 2 of 8
+==663==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==663==    by 0x4ED99B9: strdup (strdup.c:42)
+==663==    by 0x10C3B8: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663== 
+==663== 16 bytes in 1 blocks are still reachable in loss record 3 of 8
+==663==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==663==    by 0x4ED99B9: strdup (strdup.c:42)
+==663==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663== 
+==663== 32 bytes in 1 blocks are still reachable in loss record 4 of 8
+==663==    at 0x4C2FA3F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==663==    by 0x4C31D84: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==663==    by 0x10C1CE: linenoiseNoTTY (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10C295: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663== 
+==663== 82 bytes in 5 blocks are still reachable in loss record 5 of 8
+==663==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==663==    by 0x4ED99B9: strdup (strdup.c:42)
+==663==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663== 
+==663== 102 bytes in 1 blocks are definitely lost in loss record 6 of 8
+==663==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==663==    by 0x10DEDA: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663== 
+==663== 256 bytes in 1 blocks are definitely lost in loss record 7 of 8
+==663==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==663==    by 0x10D2A0: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663== 
+==663== 800 bytes in 1 blocks are still reachable in loss record 8 of 8
+==663==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==663==    by 0x10C49C: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10BA4D: linenoiseEdit (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10C15A: linenoiseRaw (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10C393: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==663== 
+==663== LEAK SUMMARY:
+==663==    definitely lost: 358 bytes in 2 blocks
+==663==    indirectly lost: 0 bytes in 0 blocks
+==663==      possibly lost: 0 bytes in 0 blocks
+==663==    still reachable: 954 bytes in 10 blocks
+==663==         suppressed: 0 bytes in 0 blocks
+==663== 
+==663== For counts of detected and suppressed errors, rerun with: -v
+==663== ERROR SUMMARY: 31 errors from 27 contexts (suppressed: 0 from 0)
+==664== error calling PR_SET_PTRACER, vgdb might block
+==664== 
+==664== HEAP SUMMARY:
+==664==     in use at exit: 1,332 bytes in 14 blocks
+==664==   total heap usage: 32 allocs, 19 frees, 9,187 bytes allocated
+==664== 
+==664== 8 bytes in 1 blocks are still reachable in loss record 1 of 9
+==664==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664== 
+==664== 8 bytes in 1 blocks are definitely lost in loss record 2 of 9
+==664==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x10DC15: substr (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10D12B: printing (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10CDA1: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664== 
+==664== 16 bytes in 1 blocks are still reachable in loss record 3 of 9
+==664==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x4ED99B9: strdup (strdup.c:42)
+==664==    by 0x10C3B8: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664== 
+==664== 16 bytes in 1 blocks are still reachable in loss record 4 of 9
+==664==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x4ED99B9: strdup (strdup.c:42)
+==664==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664== 
+==664== 32 bytes in 1 blocks are still reachable in loss record 5 of 9
+==664==    at 0x4C2FA3F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x4C31D84: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x10C1CE: linenoiseNoTTY (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10C295: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664== 
+==664== 94 bytes in 6 blocks are still reachable in loss record 6 of 9
+==664==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x4ED99B9: strdup (strdup.c:42)
+==664==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664== 
+==664== 102 bytes in 1 blocks are definitely lost in loss record 7 of 9
+==664==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x10DEDA: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664== 
+==664== 256 bytes in 1 blocks are definitely lost in loss record 8 of 9
+==664==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x10D2A0: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664== 
+==664== 800 bytes in 1 blocks are still reachable in loss record 9 of 9
+==664==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==664==    by 0x10C49C: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10BA4D: linenoiseEdit (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10C15A: linenoiseRaw (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10C393: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==664== 
+==664== LEAK SUMMARY:
+==664==    definitely lost: 366 bytes in 3 blocks
+==664==    indirectly lost: 0 bytes in 0 blocks
+==664==      possibly lost: 0 bytes in 0 blocks
+==664==    still reachable: 966 bytes in 11 blocks
+==664==         suppressed: 0 bytes in 0 blocks
+==664== 
+==664== For counts of detected and suppressed errors, rerun with: -v
+==664== ERROR SUMMARY: 32 errors from 28 contexts (suppressed: 0 from 0)
+==656== 
+==656== HEAP SUMMARY:
+==656==     in use at exit: 1,325 bytes in 14 blocks
+==656==   total heap usage: 33 allocs, 20 frees, 9,212 bytes allocated
+==656== 
+==656== 8 bytes in 1 blocks are still reachable in loss record 1 of 8
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== 16 bytes in 1 blocks are still reachable in loss record 2 of 8
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4ED99B9: strdup (strdup.c:42)
+==656==    by 0x10C3B8: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== 16 bytes in 1 blocks are still reachable in loss record 3 of 8
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4ED99B9: strdup (strdup.c:42)
+==656==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== 32 bytes in 1 blocks are still reachable in loss record 4 of 8
+==656==    at 0x4C2FA3F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4C31D84: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x10C1CE: linenoiseNoTTY (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10C295: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== 95 bytes in 7 blocks are still reachable in loss record 5 of 8
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x4ED99B9: strdup (strdup.c:42)
+==656==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE37: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== 102 bytes in 1 blocks are definitely lost in loss record 6 of 8
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x10DEDA: removeChar (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10D2F3: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== 256 bytes in 1 blocks are definitely lost in loss record 7 of 8
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x10D2A0: sourceExecution (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10CE20: Commands (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109AE9: pipeHandling (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109F05: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== 800 bytes in 1 blocks are still reachable in loss record 8 of 8
+==656==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==656==    by 0x10C49C: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10BA4D: linenoiseEdit (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10C15A: linenoiseRaw (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10C393: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==656== 
+==656== LEAK SUMMARY:
+==656==    definitely lost: 358 bytes in 2 blocks
+==656==    indirectly lost: 0 bytes in 0 blocks
+==656==      possibly lost: 0 bytes in 0 blocks
+==656==    still reachable: 967 bytes in 12 blocks
+==656==         suppressed: 0 bytes in 0 blocks
+==656== 
+==656== For counts of detected and suppressed errors, rerun with: -v
+==656== ERROR SUMMARY: 31 errors from 27 contexts (suppressed: 0 from 0)
+==665== error calling PR_SET_PTRACER, vgdb might block
+==665== 
+==665== HEAP SUMMARY:
+==665==     in use at exit: 834 bytes in 5 blocks
+==665==   total heap usage: 15 allocs, 10 frees, 5,906 bytes allocated
+==665== 
+==665== 5 bytes in 1 blocks are still reachable in loss record 1 of 4
+==665==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==665==    by 0x4ED99B9: strdup (strdup.c:42)
+==665==    by 0x10C3B8: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665== 
+==665== 8 bytes in 1 blocks are still reachable in loss record 2 of 4
+==665==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==665==    by 0x10A055: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665== 
+==665== 21 bytes in 2 blocks are still reachable in loss record 3 of 4
+==665==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==665==    by 0x4ED99B9: strdup (strdup.c:42)
+==665==    by 0x10C52E: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x109EE5: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665== 
+==665== 800 bytes in 1 blocks are still reachable in loss record 4 of 4
+==665==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==665==    by 0x10C49C: linenoiseHistoryAdd (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x10BA4D: linenoiseEdit (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x10C15A: linenoiseRaw (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x10C393: linenoise (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x109FFF: prompting (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x10A07E: tiny_shell (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665==    by 0x1098B8: main (in /mnt/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/build/Assignment)
+==665== 
+==665== LEAK SUMMARY:
+==665==    definitely lost: 0 bytes in 0 blocks
+==665==    indirectly lost: 0 bytes in 0 blocks
+==665==      possibly lost: 0 bytes in 0 blocks
+==665==    still reachable: 834 bytes in 5 blocks
+==665==         suppressed: 0 bytes in 0 blocks
+==665== 
+==665== For counts of detected and suppressed errors, rerun with: -v
+==665== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==655== 
+==655== HEAP SUMMARY:
+==655==     in use at exit: 0 bytes in 0 blocks
+==655==   total heap usage: 15 allocs, 15 frees, 5,906 bytes allocated
+==655== 
+==655== All heap blocks were freed -- no leaks are possible
+==655== 
+==655== For counts of detected and suppressed errors, rerun with: -v
+==655== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

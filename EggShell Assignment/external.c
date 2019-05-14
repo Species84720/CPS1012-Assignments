@@ -23,14 +23,17 @@ size_t sourceExecution(char **args)
         size_t openedFile = open(location, O_RDONLY);
         dup2(openedFile, fileno(stdin));
 
-        fclose(openfd);
+        //not needed since removeChar handles the file
+        //fclose(openfd);
 
+        free(location);
         return openedFile;
     }
     else
     {
         printf("The file %s does not exit!\n", location);
         strcpy(systemArgs[8].value, "1");
+        free(location);
         return 0;
     }
 }
@@ -45,7 +48,7 @@ void setEnvParameters(char **envp, int systemVariables)
         char stringGet[strlen(envp[k])];
         char *stringSplit[MAX_ARGS];
         strcpy(stringGet, envp[k]);
-        tokening(stringGet, stringSplit, '=');
+        tokening(stringGet, stringSplit, "=");
 
         for (int i = 0; i < systemVariables; i++)
         {

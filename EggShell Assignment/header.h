@@ -47,7 +47,7 @@ bool prompting(int *systemVariables, char **envp);
 void tiny_shell(char **envp);
 
 //TextHandlers.c
-int tokening(char *line, char *args[MAX_ARGS], char With);
+int tokening(char *line, char *args[MAX_ARGS], char *With);
 char *substr(char *string, int left, int right);
 char *processSlash(char **args, char *location, int start);
 void removeChar(FILE *file, char character, char *location);

@@ -14,7 +14,7 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
 
     //tokening by pipes
     char *pipeArgs[MAX_ARGS];
-    pipeCount = tokening(line, pipeArgs, '|');
+    pipeCount = tokening(line, pipeArgs, "|");
 
     //should accept 0 for when there are no pipes
     int i = 0;
@@ -38,7 +38,7 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
 
         //passing only the needed data before each pipe
         char *args[MAX_ARGS];
-        tokening(pipeArgs[i], args, ' ');
+        tokening(pipeArgs[i], args, " ");
 
         //creating the shared memory
         store *sharedMemory = mmap(NULL, 500*sizeof(store), PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
@@ -70,6 +70,9 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
 
             //filling the shared memory
             memcpy(sharedMemory, systemArgs, 500*sizeof(store));
+
+            // Free allocated memory
+            linenoiseFree(line);
 
             if (exit == false)
             {
@@ -214,14 +217,17 @@ bool prompting(int *systemVariables, char **envp)
         }
         */
     }
+
     return exit;
 }
 
 void tiny_shell(char **envp)
 {
     //setting the system variables and the amount of variables
-    int *systemVariables = malloc(sizeof(int));
+    int *systemVariables = malloc(sizeof(systemVariables));
     systemVariables[0] = setSystemVariables();
 
     prompting(systemVariables, envp);
+
+    free(systemVariables);
 }
