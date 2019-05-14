@@ -169,8 +169,23 @@ int setSystemVariables()
     strcpy(systemArgs[3].key,"USER");
     strcpy(systemArgs[3].value,getenv("USER"));
 
+    //getting the file location of the shell
+    pid_t ID = getpid();
+    char process[MAX_ARGS];
+    char location[MAX_ARGS];
+    //strcpy(process, "/proc/");
+    //strcat(process, &ID);
+    //strcat(process, "/exe");
+    sprintf(process, "/proc/%d/exe", ID);
+
     strcpy(systemArgs[4].key,"SHELL");
-    strcpy(systemArgs[4].value,getenv("SHELL"));
+    if (readlink(process, location, MAX_ARGS) == -1) {
+        perror("readlink");
+        strcpy(systemArgs[4].value, "error");
+    }
+    else {
+        strcpy(systemArgs[4].value,location);
+    }
 
     strcpy(systemArgs[5].key,"PROMPT");
     strcpy(systemArgs[5].value,"eggshell-1.0");
