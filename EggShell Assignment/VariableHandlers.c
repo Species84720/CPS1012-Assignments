@@ -79,6 +79,7 @@ void setVariable(char **args, int *systemVariables)
             }
         }
 
+        //was used for prompt before it was handled at the start
         /*
         if (check == 5)
         {
