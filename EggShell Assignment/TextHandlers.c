@@ -132,6 +132,34 @@ void removeChar(FILE *file, char character, char *location)
     free(code);
 }
 
+bool stringCheck(char *string, bool print)
+{
+    for(int i = 0; i < strlen(string); i++)
+    {
+        char c = string[i];
+        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+        {
+
+        }
+        else if(c >= '0' && c <= '9')
+        {
+
+        }
+        else if (c == '_')
+        {
+
+        }
+        else
+        {
+            if (print) {
+                printf("%c is an unacceptable character\n", c);
+            }
+            return false;
+        }
+    }
+    return true;
+}
+
 //only needed if all variables are wished to be upper case
 /*
 char *upperCase(char *args)

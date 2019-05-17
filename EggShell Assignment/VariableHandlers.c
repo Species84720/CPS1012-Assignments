@@ -46,6 +46,12 @@ void setVariable(char **args, int *systemVariables)
 
     //setting the "=" position to null
     equals[0] = '\0';
+
+    if (!stringCheck(args[0], true))
+    {
+        return;
+    }
+
     //upper case the variables
     //args[0] = upperCase(args[0]);
     check = checkVariable(args[0], systemVariables[0]);

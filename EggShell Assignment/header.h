@@ -57,6 +57,7 @@ void removeChar(FILE *file, char character, char *location);
 int fileHandling(int backupin, int backupout);
 void ChangeArgs(char **args, int k);
 size_t Redirection(char **args);
+bool stringCheck(char *string, bool print);
 
 //Controllers.c
 size_t sourceExecution(char **args);
