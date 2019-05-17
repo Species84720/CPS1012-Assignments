@@ -23,7 +23,7 @@ void directoryChanger(char **args)
         //need to go through the whole part and see if different folders where written in the same argument
         while (args[k][n] != '\0') {
             //if 2 dots are placed after each other
-            if (args[k][n] == '.' && args[k][n + 1] == '.') {
+            if ((args[k][n] == '.' && args[k][n + 1] == '.' && args[k][n + 2] == '/') || (args[k][n] == '.' && args[k][n + 1] == '.' && args[k][n + 2] == '\0')) {
                 //method to go to the parent folder
                 int l = 0;
                 for (int m = 0; m < strlen(systemArgs[2].value); m++) {
