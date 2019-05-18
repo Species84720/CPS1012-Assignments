@@ -55,9 +55,10 @@ void setEnvParameters(char **envp, int systemVariables)
             //if the variable needed is found
             if (strcmp(stringSplit[0], systemArgs[i].key) == 0)
             {
-                strcpy(envp[k], stringSplit[0]);
-                strcat(envp[k], "=");
-                strcat(envp[k], systemArgs[i].value);
+                setenv(stringSplit[0], systemArgs[i].value, 1);
+                //strcpy(envp[k], stringSplit[0]);
+                //strcat(envp[k], "=");
+                //strcat(envp[k], systemArgs[i].value);
                 break;
             }
         }
