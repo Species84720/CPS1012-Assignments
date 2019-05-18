@@ -67,6 +67,23 @@ void ChangeArgs(char **args, int k)
         strcat(code, temp);
         free(temp);
 
+        int temporal = 0;
+        for (int i = 0; i < strlen(location); i++)
+        {
+            if(location[i] == ' ')
+            {
+                temporal ++;
+            }
+        }
+        //1 to skip the "<", 1 to skip the first part of the file and temporal to skip the rest of the file name
+        k = k + 2 + temporal;
+        while (args[k] != NULL)
+        {
+            strcat(code, " ");
+            strcat(code, args[k]);
+            k++;
+        }
+
         //tokenize the new string to take place of the old arguments
         tokening(code, args, " ");
     }
@@ -80,31 +97,23 @@ void ChangeArgs(char **args, int k)
 
 size_t Redirection(char **args)
 {
-    //loop to find any ">" or ">>" or "<"
     int k = 0;
+    //find any possible "<"
     do
     {
-        if (strcmp(args[k], ">") == 0)
-        {
-            size_t openedFile = open(args[k + 1], O_RDWR | O_CREAT);
-            dup2(openedFile, fileno(stdout));
-            fileEditing = true;
-            return openedFile;
-        }
-        else if (strcmp(args[k], ">>") == 0)
-        {
-            size_t openedFile = open(args[k + 1], O_RDWR | O_CREAT);
-            dup2(openedFile, fileno(stdout));
-            fileEditing = true;
-            return openedFile;
-        }
-        else if (strcmp(args[k], "<") == 0)
+        if (strcmp(args[k], "<") == 0)
         {
             //changing the arguments to the new one's with the file commands included
             ChangeArgs(args, k);
-            break;
         }
-        else if (strcmp(args[k], "<<<") == 0)
+        k++;
+    } while (args[k] != NULL);
+
+    k = 0;
+    //find any possible "<<<"
+    do
+    {
+        if (strcmp(args[k], "<<<") == 0)
         {
             args[k] = NULL;
             //size_t openedFile = open(args[k + 1], O_RDONLY);
@@ -126,6 +135,29 @@ size_t Redirection(char **args)
                 dup2(pipes[PIPE_READ], fileno(stdin));
             }
             break;
+        }
+        k++;
+    } while (args[k] != NULL);
+
+    k = 0;
+    //now for output handling - if to file or not
+    do
+    {
+        if (strcmp(args[k], ">") == 0)
+        {
+            size_t openedFile = open(args[k + 1], O_RDWR | O_CREAT | O_TRUNC);
+            dup2(openedFile, fileno(stdout));
+            fileEditing = true;
+            args[k] = NULL;
+            return openedFile;
+        }
+        else if (strcmp(args[k], ">>") == 0)
+        {
+            size_t openedFile = open(args[k + 1], O_RDWR | O_CREAT | O_APPEND);
+            dup2(openedFile, fileno(stdout));
+            fileEditing = true;
+            args[k] = NULL;
+            return openedFile;
         }
         k++;
     } while (args[k] != NULL);
