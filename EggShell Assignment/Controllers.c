@@ -79,6 +79,7 @@ void directoryChanger(char **args)
                     strcpy(systemArgs[2].value, backup);
                     chdir(backup);
                     strcpy(systemArgs[8].value, "1");
+                    break;
                 } else {
                     strcpy(systemArgs[2].value, location);
                     strcpy(systemArgs[7].value, backup);
