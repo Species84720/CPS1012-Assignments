@@ -6,10 +6,12 @@
 
 int fileHandling(int backupin, int backupout)
 {
+    /*
     if (fileEditing)
     {
         dup2(backupout, fileno(stdout));
     }
+    */
 
     //checking if we are currently getting data from a file for when source occurs
     if (fileLines != 0)
@@ -147,7 +149,7 @@ size_t Redirection(char **args)
         {
             size_t openedFile = open(args[k + 1], O_RDWR | O_CREAT | O_TRUNC);
             dup2(openedFile, fileno(stdout));
-            fileEditing = true;
+            //fileEditing = true;
             args[k] = NULL;
             return openedFile;
         }
@@ -155,7 +157,7 @@ size_t Redirection(char **args)
         {
             size_t openedFile = open(args[k + 1], O_RDWR | O_CREAT | O_APPEND);
             dup2(openedFile, fileno(stdout));
-            fileEditing = true;
+            //fileEditing = true;
             args[k] = NULL;
             return openedFile;
         }

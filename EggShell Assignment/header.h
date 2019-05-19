@@ -32,7 +32,7 @@ typedef struct linked_list
 
 store systemArgs[500];
 int fileLines;
-bool fileEditing;
+//bool fileEditing;
 pid_t killPID;
 
 //main.c

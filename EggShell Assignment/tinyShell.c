@@ -102,11 +102,13 @@ bool pipeHandling(char *line, int *systemVariables, char **envp)
                 close(pipeConnect[PIPE_WRITE]);
                 if (i + 1 > pipeCount)
                 {
+                    /*
                     if (fileEditing)
                     {
                         fileEditing = false;
                     }
                     else
+                    */
                     {
                         /*
                         char buffer[1];
@@ -168,7 +170,7 @@ bool prompting(int *systemVariables, char **envp)
     //backup of stdin
     int backupin = dup(fileno(stdin));
     int backupout = dup(fileno(stdout));
-    fileEditing = false;
+    //fileEditing = false;
 
     //to see if exit was passed to the shell
     bool exit = false;
