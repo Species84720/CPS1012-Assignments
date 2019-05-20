@@ -60,7 +60,6 @@ size_t Redirection(char **args);
 bool stringCheck(char *string, bool print);
 
 //Controllers.c
-size_t sourceExecution(char **args);
 bool Commands (char **args, int *systemVariables, char **envp);
 int setSystemVariables();
 
@@ -69,6 +68,7 @@ void printing(char **args, int systemVariables);
 void printSystemVariables(int SystemVariables);
 
 //external.c
+size_t sourceExecution(char **args);
 void externalFunctions(int *systemVariables, char **args, char **envp);
 
 #endif //ASSIGNMENT_HEADER_H

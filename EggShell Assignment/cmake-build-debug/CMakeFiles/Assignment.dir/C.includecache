@@ -54,34 +54,6 @@ sys/wait.h
 sys/mman.h
 -
 
-/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.c
-termios.h
--
-unistd.h
--
-stdlib.h
--
-stdio.h
--
-errno.h
--
-string.h
--
-stdlib.h
--
-ctype.h
--
-sys/stat.h
--
-sys/types.h
--
-sys/ioctl.h
--
-unistd.h
--
-linenoise.h
-/cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
-
 /cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/linenoise-master/linenoise.h
 
 /cygdrive/c/Users/User/Downloads/Operating System Assignement/Juan/EggShell Assignment/main.c
